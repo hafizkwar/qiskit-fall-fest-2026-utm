@@ -1,6 +1,8 @@
 # Qiskit Fall Fest 2026 @ UTM website
 
-A deployable, dependency-free static site for Qiskit Fall Fest 2026 @ UTM. It uses plain HTML, CSS, and one vanilla JavaScript module. There is no package manager, build step, analytics, cookie, backend, or registration form.
+A deployable static site for Qiskit Fall Fest 2026 @ UTM. It uses plain HTML, CSS, vanilla JavaScript modules, and a locally vendored, pinned copy of Three.js 0.185.1. There is no package manager, build step, analytics, cookie, backend, or registration form.
+
+The public experience has three routes: `index.html`, `about.html`, and `schedule.html`. A single fixed WebGL canvas creates five scroll-directed quantum scenes while all content remains accessible HTML. Pointer and horizontal touch rotation are progressively enhanced; reduced-motion and WebGL-failure visitors receive a static CSS treatment.
 
 ## Preview locally
 
@@ -10,17 +12,23 @@ From the repository root:
 python -m http.server 8000 --bind 127.0.0.1
 ```
 
-Open `http://127.0.0.1:8000/`. Do not open the HTML through `file://`; browsers block the JSON fetch there and intentionally show the static fallback.
+Open `http://127.0.0.1:8000/`. Do not open the HTML through `file://`; JavaScript modules require an HTTP origin.
+
+## Runtime note
+
+Three.js is served locally from `assets/vendor/three.module.min.js` and its version-matched `three.core.min.js`, so WebGL does not depend on a runtime CDN. The existing Tailwind browser CDN include is intentionally preserved from the supplied page sources; the custom production styling lives in `assets/css/stage.css`. Google Fonts are the only other remote presentation dependency.
+
+The WebGL budget is 4,000 shader particles on desktop and 1,200 on coarse/mobile pointers, with device-pixel ratio capped at 2 and 1.5 respectively. A 90-frame median sampler reduces DPR and particle draw count if rendering exceeds 20 ms. The current vendored Three.js pair is about 191 KB gzip; the four site-authored JavaScript modules are about 8 KB gzip, and the stage stylesheet is about 3.5 KB gzip.
 
 ## Update the site in under ten steps
 
-1. Open `content/event.json`. This is the source of truth for event metadata, agenda, speakers, FAQ, resources, collaborators, sponsors, and social links.
+1. Open `content/event.json`. This is the source of truth for confirmed event metadata and committee-managed links.
 2. Replace every `TODO:` value with a confirmed committee fact. Do not guess missing details.
 3. Add a registration URL only when registration is live. An empty `registrationUrl` keeps the button hidden.
 4. Put approved logos and speaker photos in `assets/img/`, then add their relative paths to `event.json` (for example, `assets/img/speaker-yap.webp`). Use WebP, declare dimensions in the rendered markup if the image treatment changes, and confirm usage permission.
 5. Add each sponsor to the `sponsors` array with `name`, local `logo`, `tier`, and `url`. Never edit the HTML sponsor strip.
 6. If the repository moves, update `site.canonicalBase`, `sitemap.xml`, and `robots.txt` with the new HTTPS URL.
-7. Preview locally and test `index.html`, `resources.html`, `community.html`, `#agenda`, the mobile menu, FAQ, countdown, and calendar download.
+7. Preview locally and test `index.html`, `about.html`, `schedule.html`, the mobile menu, live countdown, WebGL fallback, reduced motion, and every navigation link.
 8. Run the launch checks below, commit, and push to `main`. GitHub Pages serves the repository root because `.nojekyll` is present.
 
 ## Publish on GitHub Pages
@@ -29,7 +37,7 @@ The site is initially published under `hafizkwar`. To recreate that deployment, 
 
 ```powershell
 git init
-git add index.html resources.html community.html assets content .nojekyll README.md LICENSE sitemap.xml robots.txt
+git add index.html about.html schedule.html assets content .nojekyll README.md LICENSE sitemap.xml robots.txt
 git commit -m "Launch Qiskit Fall Fest 2026 UTM website"
 git branch -M main
 git remote add origin https://github.com/hafizkwar/qiskit-fall-fest-2026-utm.git
