@@ -1372,7 +1372,7 @@ h3 {
 
 .js .reveal :is(.index-marker, .resource-stage),
 .js .reveal > .section-number {
-  opacity: 0.5;
+  opacity: 1;
   transform: translateX(-0.75rem);
 }
 
@@ -1606,6 +1606,7 @@ h3 {
   --poster-cream: #f5f2e8;
   --poster-cyan: #23d9ce;
   --poster-coral: #ff5a3d;
+  --poster-coral-ink: #9f2f1c;
   --poster-acid: #d8ff4f;
 }
 
@@ -1876,7 +1877,7 @@ h3 {
 
 .experience-item .index-marker {
   margin: 0;
-  color: var(--poster-coral);
+  color: var(--poster-coral-ink);
   font-size: 1rem;
 }
 
