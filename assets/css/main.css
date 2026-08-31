@@ -1884,6 +1884,150 @@ h3 {
   }
 }
 
+/* FINDING-004: give each chapter a distinct signal while keeping one poster system. */
+#agenda,
+#faq {
+  --text-primary: #f7f5ee;
+  --text-secondary: #aaa89f;
+  --surface: #151719;
+  --surface-raised: #202327;
+  --border: #303236;
+  --border-strong: #6b6e74;
+  --accent-purple: #a970ff;
+  --link: var(--poster-acid);
+  background: var(--poster-black);
+  color: var(--text-primary);
+}
+
+#agenda {
+  position: relative;
+  overflow: hidden;
+}
+
+#agenda::before {
+  position: absolute;
+  top: -7rem;
+  right: -2rem;
+  width: 21rem;
+  height: 21rem;
+  border: 1px solid var(--poster-cyan);
+  content: "";
+  opacity: 0.42;
+  transform: rotate(45deg);
+}
+
+#agenda .section-heading-row,
+#agenda #agenda-content {
+  position: relative;
+  z-index: 1;
+}
+
+#agenda .agenda-table-wrap,
+#agenda .agenda-cards {
+  border-top: 3px solid var(--poster-acid);
+}
+
+#agenda .agenda-row:nth-child(3n + 1) td::before {
+  background: var(--poster-cyan);
+}
+
+#agenda .agenda-row:nth-child(3n + 2) td::before {
+  background: var(--poster-coral);
+}
+
+#agenda .agenda-row:hover {
+  background: #151719;
+}
+
+#speakers {
+  --text-primary: var(--poster-black);
+  --text-secondary: #194944;
+  --border: #0a968e;
+  --border-strong: var(--poster-black);
+  background: var(--poster-cyan);
+  color: var(--poster-black);
+}
+
+#speakers .section-number,
+#speakers .eyebrow {
+  color: #054d49;
+}
+
+#speakers .speaker-card {
+  border-top: 4px solid var(--poster-black);
+  background: var(--poster-black);
+  color: #f7f5ee;
+}
+
+#speakers .speaker-card .eyebrow,
+#speakers .speaker-role,
+#speakers .speaker-card p:last-child {
+  color: #aaa89f;
+}
+
+#speakers .speaker-placeholder {
+  background-color: #151719;
+  background-image: linear-gradient(90deg, transparent 49.8%, #303236 50%, transparent 50.2%), linear-gradient(transparent 49.8%, #303236 50%, transparent 50.2%);
+}
+
+#speakers .speaker-placeholder span {
+  color: var(--poster-acid);
+}
+
+#resources {
+  --text-primary: var(--poster-black);
+  --text-secondary: #484a20;
+  --surface: #cbe945;
+  --border: #899f26;
+  --border-strong: var(--poster-black);
+  --accent-purple: #8c2c1d;
+  --link: var(--poster-black);
+  background: var(--poster-acid);
+  color: var(--poster-black);
+}
+
+#resources .resource-card {
+  background: transparent;
+}
+
+#resources .resource-stage,
+#resources .section-number {
+  color: #8c2c1d;
+}
+
+.community-band {
+  --deep-purple: var(--poster-coral);
+  background:
+    repeating-linear-gradient(90deg, transparent 0 calc(8.333vw - 1px), color-mix(in srgb, var(--poster-black) 14%, transparent) calc(8.333vw - 1px) 8.333vw),
+    var(--poster-coral);
+  color: var(--poster-black);
+}
+
+.community-band::after {
+  border-color: var(--poster-black);
+  border-radius: 0;
+  opacity: 0.3;
+  transform: rotate(45deg);
+}
+
+.community-band .eyebrow,
+.community-band .lede {
+  color: #4a170f;
+}
+
+.community-band .button-primary {
+  background: var(--poster-black);
+  color: var(--poster-acid);
+}
+
+#faq .faq-list {
+  border-top: 3px solid var(--poster-cyan);
+}
+
+#faq .faq-item summary span {
+  color: var(--poster-acid);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
