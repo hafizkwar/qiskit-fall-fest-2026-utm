@@ -231,6 +231,8 @@ function renderFaq(data) {
 }
 
 function renderHome(data) {
+  const staticVersion = qs("[data-last-updated]")?.getAttribute("datetime");
+  if (staticVersion === data.site.lastUpdated) return;
   renderHero(data);
   renderStats(data);
   renderExperiences(data);
@@ -442,19 +444,7 @@ function setupMenu() {
 }
 
 function setupReveal() {
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) {
-    qsa(".reveal").forEach((node) => node.classList.add("is-visible"));
-    return;
-  }
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { rootMargin: "0px 0px -8%", threshold: 0.08 });
-  qsa(".reveal").forEach((node) => observer.observe(node));
+  qsa(".reveal").forEach((node) => node.classList.add("is-visible"));
 }
 
 function setupKineticSignals() {
