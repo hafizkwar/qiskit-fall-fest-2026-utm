@@ -457,6 +457,37 @@ function setupReveal() {
   qsa(".reveal").forEach((node) => observer.observe(node));
 }
 
+function setupKineticSignals() {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  let scrollFrame = 0;
+  const updateProgress = () => {
+    const distance = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = distance > 0 ? Math.min(1, Math.max(0, window.scrollY / distance)) : 0;
+    document.documentElement.style.setProperty("--scroll-progress", progress.toFixed(4));
+    scrollFrame = 0;
+  };
+
+  window.addEventListener("scroll", () => {
+    if (!scrollFrame) scrollFrame = window.requestAnimationFrame(updateProgress);
+  }, { passive: true });
+  updateProgress();
+
+  const hero = qs(".hero");
+  if (!hero) return;
+  hero.addEventListener("pointermove", (event) => {
+    const bounds = hero.getBoundingClientRect();
+    const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 18;
+    const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * 14;
+    hero.style.setProperty("--hero-shift-x", `${x.toFixed(2)}px`);
+    hero.style.setProperty("--hero-shift-y", `${y.toFixed(2)}px`);
+  });
+  hero.addEventListener("pointerleave", () => {
+    hero.style.setProperty("--hero-shift-x", "0px");
+    hero.style.setProperty("--hero-shift-y", "0px");
+  });
+}
+
 function setupCalendar(data) {
   qsa("[data-calendar-button]").forEach((button) => button.addEventListener("click", () => downloadCalendar(data)));
 }
@@ -471,6 +502,7 @@ function showLoadError() {
 async function init() {
   document.documentElement.classList.add("js");
   setupMenu();
+  setupKineticSignals();
   try {
     const response = await fetch(EVENT_JSON, { cache: "no-store" });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);

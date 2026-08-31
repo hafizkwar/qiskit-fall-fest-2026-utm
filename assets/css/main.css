@@ -1354,14 +1354,26 @@ h3 {
 }
 
 .js .reveal {
-  opacity: 0;
-  transform: translateY(1.2rem);
-  transition: opacity 500ms ease, transform 500ms ease;
+  opacity: 1;
+  transform: none;
 }
 
 .js .reveal.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
+}
+
+.js .reveal :is(.index-marker, .resource-stage),
+.js .reveal > .section-number {
+  opacity: 0.5;
+  transform: translateX(-0.75rem);
+}
+
+.js .reveal.is-visible :is(.index-marker, .resource-stage),
+.js .reveal.is-visible > .section-number {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 420ms ease-out, transform 420ms ease-out;
 }
 
 @keyframes orbit-a {
@@ -2028,6 +2040,31 @@ h3 {
   color: var(--poster-acid);
 }
 
+/* FINDING-003: motion accents the signal; it never hides the information. */
+html {
+  --scroll-progress: 0;
+}
+
+body::after {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  height: 3px;
+  background: var(--poster-acid);
+  content: "";
+  pointer-events: none;
+  transform: scaleX(var(--scroll-progress));
+  transform-origin: left;
+}
+
+.hero-visual {
+  transform: translate3d(var(--hero-shift-x, 0), var(--hero-shift-y, 0), 0);
+  transition: transform 240ms ease-out;
+  will-change: transform;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -2040,6 +2077,14 @@ h3 {
 
   .js .reveal {
     opacity: 1;
+    transform: none;
+  }
+
+  body::after {
+    display: none;
+  }
+
+  .hero-visual {
     transform: none;
   }
 }
