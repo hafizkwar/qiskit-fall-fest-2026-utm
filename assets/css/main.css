@@ -37,6 +37,7 @@
   --magenta: #d02670;
   --teal: #007d79;
   --link: #be95ff;
+  --visited: #d4bbff;
   --focus: #78a9ff;
   --danger: #ff8389;
   --success: #42be65;
@@ -73,6 +74,7 @@
     --magenta: #9f1853;
     --teal: #005d5d;
     --link: #6929c4;
+    --visited: #8a3ffc;
     --focus: #0f62fe;
     --danger: #da1e28;
     --success: #198038;
@@ -130,6 +132,10 @@ a {
 
 a:hover {
   text-decoration-thickness: 0.14em;
+}
+
+a:not(.button):visited {
+  color: var(--visited);
 }
 
 button,
@@ -848,6 +854,7 @@ h3 {
 }
 
 .agenda-card summary {
+  position: relative;
   display: grid;
   min-height: 4.5rem;
   padding: var(--space-4) 2rem var(--space-4) 0;
@@ -1151,7 +1158,7 @@ h3 {
   margin-top: var(--space-2);
   color: var(--text-secondary);
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
 }
 
@@ -1243,7 +1250,7 @@ h3 {
   border-top: 1px solid var(--border);
   gap: var(--space-3);
   color: var(--text-secondary);
-  font-size: 0.78rem;
+  font-size: 0.875rem;
 }
 
 .footer-meta p {
@@ -1346,7 +1353,7 @@ h3 {
   border: 1px dashed var(--border-strong);
   color: var(--text-secondary);
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.85rem;
 }
 
 .reveal {
@@ -1994,6 +2001,7 @@ h3 {
   --border-strong: var(--poster-black);
   --accent-purple: #8c2c1d;
   --link: var(--poster-black);
+  --visited: #6a1f14;
   background: var(--poster-acid);
   color: var(--poster-black);
 }
@@ -2038,6 +2046,27 @@ h3 {
 
 #faq .faq-item summary span {
   color: var(--poster-acid);
+}
+
+/* FINDING-005: links stay identifiable, focusable, and finger-sized. */
+.wordmark,
+.text-link,
+.footer-links a {
+  min-height: 2.75rem;
+}
+
+.text-link,
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  padding-block: 0.55rem;
+}
+
+.site-header .wordmark:visited,
+.site-header .desktop-nav a:visited,
+.mobile-nav a:visited,
+.community-band a:visited {
+  color: inherit;
 }
 
 /* FINDING-003: motion accents the signal; it never hides the information. */

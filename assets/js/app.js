@@ -69,7 +69,7 @@ function renderHero(data) {
   const event = data.event;
   setContent("hero-copy", `
     <p class="eyebrow">UTM · JOHOR BAHRU · 2026</p>
-    <h1>${escapeHtml(event.name)}</h1>
+    <h1 id="page-title">${escapeHtml(event.name)}</h1>
     <p class="hero-tagline">${escapeHtml(event.tagline)}</p>
     <div class="event-lockup" aria-label="Event date and venue">
       <p><span>${icon("calendar")}</span><strong>${escapeHtml(event.dateLabel)}</strong><small>${escapeHtml(event.timeLabel)}</small></p>
@@ -198,7 +198,7 @@ function renderCommunityPreview(data) {
   const community = data.community;
   setContent("community-copy", `
     <p class="eyebrow">THE OUTCOME</p>
-    <h2>${escapeHtml(community.name)} starts here.</h2>
+    <h2 id="community-title">${escapeHtml(community.name)} starts here.</h2>
     <p class="lede">${escapeHtml(data.event.outcome)}</p>
     <a class="button button-primary" href="community.html">See the community plan ${icon("arrow")}</a>
   `);
