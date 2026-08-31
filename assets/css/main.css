@@ -1806,6 +1806,84 @@ h3 {
   }
 }
 
+/* FINDING-001: keep the story moving instead of suspending copy in empty screens. */
+.section {
+  padding-block: clamp(3.5rem, 6.5vw, 6rem);
+}
+
+.section-grid {
+  align-items: start;
+}
+
+.section-grid + :is(.stats-grid, .experience-grid, .speaker-grid, .resource-grid, .faq-list) {
+  margin-top: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.stats-grid {
+  overflow: hidden;
+  margin-top: clamp(2.5rem, 5vw, 4.5rem);
+  border: 1px solid var(--poster-black);
+  background: var(--poster-black);
+}
+
+.stat-card {
+  min-height: 0;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border-color: #303236;
+  color: #f7f5ee;
+}
+
+.stat-card strong {
+  color: var(--poster-acid);
+}
+
+.stat-card span {
+  color: #aaa89f;
+}
+
+.experience-grid {
+  grid-template-columns: 1fr !important;
+}
+
+.experience-item {
+  display: grid;
+  min-height: 0;
+  padding: clamp(1.5rem, 3vw, 2.5rem) 0;
+  grid-template-columns: 4rem minmax(0, 0.8fr) minmax(0, 1fr);
+  align-items: start;
+  border-right: 0 !important;
+  gap: var(--space-5);
+}
+
+.experience-item .index-marker {
+  margin: 0;
+  color: var(--poster-coral);
+  font-size: 1rem;
+}
+
+.experience-item h3,
+.experience-item p {
+  margin: 0;
+}
+
+.speaker-grid {
+  gap: clamp(1rem, 2vw, 2rem);
+}
+
+.resource-card {
+  min-height: 12rem;
+}
+
+@media (max-width: 39.99rem) {
+  .experience-item {
+    grid-template-columns: 3rem 1fr;
+  }
+
+  .experience-item p {
+    grid-column: 2;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
