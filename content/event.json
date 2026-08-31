@@ -1,0 +1,203 @@
+{
+  "site": {
+    "canonicalBase": "https://hafizkwar.github.io/qiskit-fall-fest-2026-utm/",
+    "lastUpdated": "2026-08-31",
+    "repositoryUrl": "https://github.com/Qiskit-Fall-Fest-2026/materials-resources",
+    "contactEmail": "TODO: add the shared committee email",
+    "codeLicense": "MIT",
+    "contentLicense": "Event content and logos are excluded from the code licence."
+  },
+  "event": {
+    "name": "Qiskit Fall Fest 2026 @ UTM",
+    "shortName": "QFF 2026 @ UTM",
+    "tagline": "Software Ready, Hardware still Awaiting.",
+    "globalTheme": "A Decade of Quantum on the Cloud",
+    "themeContext": "Ten years since the first open-access quantum computer became available on the cloud.",
+    "start": "2026-10-24T08:00:00+08:00",
+    "end": "2026-10-24T18:00:00+08:00",
+    "timezone": "Asia/Kuala_Lumpur",
+    "timezoneLabel": "MYT (UTC+8)",
+    "dateLabel": "Saturday, 24 October 2026",
+    "timeLabel": "08:00–18:00 MYT",
+    "capacity": 100,
+    "registrationUrl": "",
+    "followUrl": "",
+    "organizer": "Student-led committee at Universiti Teknologi Malaysia",
+    "collaboration": "In collaboration with IBM Quantum, the Faculty of Computing, and the Faculty of Science.",
+    "selectionHighlight": "UTM is one of only three Malaysian universities selected for IBM sponsorship in the 2026 cycle. More than 900 universities applied worldwide and 200 were selected.",
+    "outcome": "Launch the UTM Quantum student community, build a path to MyQI affiliation, and create annual continuity for student-led quantum learning.",
+    "venue": {
+      "name": "ICC, Innovation & Commercialisation Centre",
+      "institution": "Universiti Teknologi Malaysia",
+      "city": "Johor Bahru",
+      "region": "Johor",
+      "postalCode": "TODO: confirm the venue postal code",
+      "country": "Malaysia",
+      "addressLabel": "ICC, Innovation & Commercialisation Centre, Universiti Teknologi Malaysia, Johor Bahru",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=ICC%20Innovation%20and%20Commercialisation%20Centre%20Universiti%20Teknologi%20Malaysia%20Johor%20Bahru",
+      "parkingNote": "TODO: confirm participant parking and drop-off instructions",
+      "arrivalNote": "Please arrive before 08:30 for breakfast and registration. TODO: add the exact entrance and check-in desk location."
+    }
+  },
+  "lead": {
+    "name": "Lua Yu Hui",
+    "role": "Lead organiser / Director"
+  },
+  "stats": [
+    { "value": "3", "label": "Malaysian universities selected" },
+    { "value": "200 / 900+", "label": "Universities selected worldwide" },
+    { "value": "100", "label": "In-person seats at UTM" }
+  ],
+  "experiences": [
+    {
+      "marker": "01",
+      "title": "Hear from two disciplines",
+      "description": "Connect quantum physics and computing through talks from UTM academic advisors in the Faculty of Science and Faculty of Computing."
+    },
+    {
+      "marker": "02",
+      "title": "Build with Qiskit",
+      "description": "Work through two interactive Qiskit sessions designed to turn beginner curiosity into practical first steps."
+    },
+    {
+      "marker": "03",
+      "title": "Visit working labs",
+      "description": "Finish the day with visits to AQSolotl and the Quantum Lab in UTM's Department of Physics."
+    }
+  ],
+  "agenda": [
+    { "start": "08:00", "end": "08:30", "session": "Breakfast", "type": "hospitality" },
+    { "start": "08:30", "end": "09:00", "session": "Registration and attendance", "type": "arrival" },
+    { "start": "09:00", "end": "09:21", "session": "Opening: welcome from the Deans of the Faculty of Computing and the Faculty of Science, followed by the opening ceremony", "type": "ceremony" },
+    { "start": "09:21", "end": "09:30", "session": "Break", "type": "break" },
+    { "start": "09:30", "end": "10:45", "session": "Group forming and self-introductions", "type": "community" },
+    { "start": "10:45", "end": "11:00", "session": "Talks by Dr. Yap Yung Szen and Ts. Dr. Nur Haliza Abdul Wahab", "type": "talk" },
+    { "start": "11:00", "end": "11:15", "session": "Programme briefing by the student committee", "type": "briefing" },
+    { "start": "11:15", "end": "12:45", "session": "Interactive Qiskit session 1", "type": "hands-on" },
+    { "start": "12:45", "end": "14:00", "session": "Lunch and exhibition booth", "type": "hospitality" },
+    { "start": "14:00", "end": "14:45", "session": "Student sharings", "type": "community" },
+    { "start": "14:45", "end": "15:15", "session": "Launch of the UTM Quantum Community and future initiatives", "type": "community" },
+    { "start": "15:15", "end": "16:45", "session": "Interactive Qiskit session 2", "type": "hands-on" },
+    { "start": "16:45", "end": "17:00", "session": "Closing and appreciation", "type": "ceremony" },
+    { "start": "17:00", "end": "18:00", "session": "Lab visits: AQSolotl and the Quantum Lab, Department of Physics", "type": "lab" },
+    { "start": "18:00", "end": "", "session": "End", "type": "end" }
+  ],
+  "speakers": [
+    {
+      "name": "Dr. Yap Yung Szen",
+      "role": "Academic advisor and speaker",
+      "affiliation": "Faculty of Science · Physics",
+      "bio": "Bringing the physics perspective to the day's beginner-friendly introduction to quantum computing.",
+      "photo": "",
+      "photoTodo": "TODO: add an approved speaker photo and confirm the bio"
+    },
+    {
+      "name": "Ts. Dr. Nur Haliza Abdul Wahab",
+      "role": "Academic advisor and speaker",
+      "affiliation": "Faculty of Computing",
+      "bio": "Connecting quantum concepts with computing practice and the student learning journey at UTM.",
+      "photo": "",
+      "photoTodo": "TODO: add an approved speaker photo and confirm the bio"
+    }
+  ],
+  "bring": [
+    "A laptop and charger for the interactive Qiskit sessions",
+    "An IBM Quantum account created before the event",
+    "A refillable water bottle and your student identification",
+    "Questions, curiosity, and no assumption of prior quantum experience"
+  ],
+  "resources": [
+    {
+      "stage": "before",
+      "title": "Event materials repository",
+      "description": "The committee's source for Fall Fest materials, deliverables, and learning resources.",
+      "url": "https://github.com/Qiskit-Fall-Fest-2026/materials-resources",
+      "label": "Open GitHub repository"
+    },
+    {
+      "stage": "before",
+      "title": "IBM Quantum Platform",
+      "description": "Create your account and become familiar with the cloud workspace before event day.",
+      "url": "https://quantum.cloud.ibm.com/",
+      "label": "Open IBM Quantum Platform"
+    },
+    {
+      "stage": "during",
+      "title": "Qiskit documentation",
+      "description": "API references and practical guides for the hands-on sessions.",
+      "url": "https://quantum.cloud.ibm.com/docs/en/guides",
+      "label": "Read Qiskit guides"
+    },
+    {
+      "stage": "after",
+      "title": "Qiskit learning",
+      "description": "Continue from first circuits into structured courses and quantum information topics.",
+      "url": "https://quantum.cloud.ibm.com/learning/en",
+      "label": "Explore Qiskit learning"
+    }
+  ],
+  "community": {
+    "name": "UTM Quantum Community",
+    "summary": "A student-led home for learners who want to keep exploring quantum computing after Fall Fest.",
+    "joinText": "Follow the community for the launch announcement and future sessions. The public social link will appear here once the committee confirms it.",
+    "plannedActivities": [
+      "Beginner study circles using Qiskit learning resources",
+      "Student sharing sessions across physics and computing",
+      "A path toward MyQI affiliation",
+      "An annual handover so the next student committee can continue the programme"
+    ],
+    "socials": [
+      { "name": "Instagram", "url": "", "todo": "TODO: add the community Instagram URL" },
+      { "name": "LinkedIn", "url": "", "todo": "TODO: add the community LinkedIn URL" },
+      { "name": "WhatsApp", "url": "", "todo": "TODO: add the community WhatsApp invite URL" }
+    ]
+  },
+  "collaborators": [
+    { "name": "IBM Quantum", "logo": "", "url": "", "todo": "TODO: add approved local logo and URL" },
+    { "name": "UTM Faculty of Computing", "logo": "", "url": "", "todo": "TODO: add approved local logo and URL" },
+    { "name": "UTM Faculty of Science", "logo": "", "url": "", "todo": "TODO: add approved local logo and URL" }
+  ],
+  "sponsors": [],
+  "faq": [
+    {
+      "question": "Do I need quantum computing experience?",
+      "answer": "No. The day is designed for beginners from computing, science, and other fields. Curiosity and a willingness to try are enough."
+    },
+    {
+      "question": "How much does it cost?",
+      "answer": "TODO: the committee must confirm the attendance fee, if any, before launch."
+    },
+    {
+      "question": "What language will the sessions use?",
+      "answer": "TODO: the committee must confirm the event language and whether bilingual support will be available."
+    },
+    {
+      "question": "Must I bring a laptop?",
+      "answer": "Yes. Bring a charged laptop and charger for both interactive Qiskit sessions. Create an IBM Quantum account before arriving."
+    },
+    {
+      "question": "Will participants receive a certificate?",
+      "answer": "TODO: the committee must confirm certificate eligibility and attendance requirements."
+    },
+    {
+      "question": "Will food be provided?",
+      "answer": "Breakfast and lunch appear in the published agenda. TODO: confirm dietary options, allergens, and whether participants should bring anything else."
+    },
+    {
+      "question": "Are prayer facilities available?",
+      "answer": "TODO: add the nearest prayer facilities and the walking route from ICC."
+    },
+    {
+      "question": "How do I travel to ICC and where can I park?",
+      "answer": "The event is at ICC, Innovation & Commercialisation Centre, Universiti Teknologi Malaysia, Johor Bahru. Open the map link for live routing. TODO: confirm parking and drop-off instructions."
+    },
+    {
+      "question": "Will photos or video be taken?",
+      "answer": "Yes, event photography and video are planned. Participants who prefer not to appear should tell the registration desk on arrival so the committee can explain the opt-out process."
+    },
+    {
+      "question": "Does this website track me?",
+      "answer": "No. The site uses no analytics, cookies, advertising, or local storage of personal data. External links have their own privacy practices."
+    }
+  ]
+}

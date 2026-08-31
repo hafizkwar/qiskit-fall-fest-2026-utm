@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hafizkwar.github.io/qiskit-fall-fest-2026-utm/sitemap.xml

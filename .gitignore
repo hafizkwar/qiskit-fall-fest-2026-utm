@@ -1,0 +1,15 @@
+# This workspace contains unrelated local work. Publish only the event website.
+*
+!.gitignore
+!.nojekyll
+!LICENSE
+!README.md
+!index.html
+!resources.html
+!community.html
+!robots.txt
+!sitemap.xml
+!assets/
+!assets/**
+!content/
+!content/event.json
