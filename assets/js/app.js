@@ -68,12 +68,12 @@ function renderHeader(data) {
 function renderHero(data) {
   const event = data.event;
   setContent("hero-copy", `
-    <p class="eyebrow">UTM · JOHOR BAHRU · 2026</p>
-    <h1 id="page-title">${escapeHtml(event.name)}</h1>
+    <p class="eyebrow">UTM · JOHOR BAHRU · 24 OCTOBER 2026</p>
+    <h1 id="page-title"><span>Qiskit</span><span>Fall Fest</span><em>2026 @ UTM</em></h1>
     <p class="hero-tagline">${escapeHtml(event.tagline)}</p>
     <div class="event-lockup" aria-label="Event date and venue">
-      <p><span>${icon("calendar")}</span><strong>${escapeHtml(event.dateLabel)}</strong><small>${escapeHtml(event.timeLabel)}</small></p>
-      <p><span>${icon("pin")}</span><strong>${escapeHtml(event.venue.name)}</strong><small>${escapeHtml(event.venue.institution)}, ${escapeHtml(event.venue.city)}</small></p>
+      <p><span class="lockup-index" aria-hidden="true">01</span><strong>${escapeHtml(event.dateLabel)}</strong><small>${escapeHtml(event.timeLabel)}</small></p>
+      <p><span class="lockup-index" aria-hidden="true">02</span><strong>${escapeHtml(event.venue.name)}</strong><small>${escapeHtml(event.venue.institution)}, ${escapeHtml(event.venue.city)}</small></p>
     </div>
   `);
 }
@@ -322,7 +322,7 @@ function injectStructuredData(data) {
       }
     },
     organizer: { "@type": "Organization", name: data.event.organizer },
-    image: new URL("assets/img/og-image.png", window.location.href).href,
+    image: new URL("assets/img/og-image.jpg", window.location.href).href,
     maximumAttendeeCapacity: data.event.capacity
   };
   if (isConfigured(venue.postalCode)) schema.location.address.postalCode = venue.postalCode;
@@ -461,21 +461,86 @@ function setupKineticSignals() {
   window.addEventListener("scroll", () => {
     if (!scrollFrame) scrollFrame = window.requestAnimationFrame(updateProgress);
   }, { passive: true });
-  updateProgress();
 
-  const hero = qs(".hero");
-  if (!hero) return;
-  hero.addEventListener("pointermove", (event) => {
-    const bounds = hero.getBoundingClientRect();
-    const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 18;
-    const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * 14;
-    hero.style.setProperty("--hero-shift-x", `${x.toFixed(2)}px`);
-    hero.style.setProperty("--hero-shift-y", `${y.toFixed(2)}px`);
+  const stage = qs("[data-tilt-stage]");
+  if (!stage) return;
+  let tiltFrame = 0;
+  let nextTilt = { x: 2.5, y: -7 };
+  const paintTilt = () => {
+    stage.style.setProperty("--tilt-x", `${nextTilt.x.toFixed(2)}deg`);
+    stage.style.setProperty("--tilt-y", `${nextTilt.y.toFixed(2)}deg`);
+    tiltFrame = 0;
+  };
+  stage.addEventListener("pointermove", (event) => {
+    if (event.pointerType === "touch") return;
+    const bounds = stage.getBoundingClientRect();
+    const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+    const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+    nextTilt = { x: 2.5 - y * 8, y: -7 + x * 12 };
+    if (!tiltFrame) tiltFrame = window.requestAnimationFrame(paintTilt);
   });
-  hero.addEventListener("pointerleave", () => {
-    hero.style.setProperty("--hero-shift-x", "0px");
-    hero.style.setProperty("--hero-shift-y", "0px");
+  stage.addEventListener("pointerleave", () => {
+    nextTilt = { x: 2.5, y: -7 };
+    if (!tiltFrame) tiltFrame = window.requestAnimationFrame(paintTilt);
   });
+}
+
+function setupVideoCover() {
+  const video = qs("[data-cover-video]");
+  const toggle = qs("[data-video-toggle]");
+  if (!video || !toggle) return;
+
+  const iconNode = qs("span", toggle);
+  const labelNode = qs("b", toggle);
+  const stage = video.closest("[data-tilt-stage]");
+  let userPaused = true;
+
+  const updateToggle = () => {
+    const paused = video.paused;
+    if (iconNode) iconNode.textContent = paused ? "▶" : "Ⅱ";
+    if (labelNode) labelNode.textContent = paused ? "Play film" : "Pause film";
+    toggle.setAttribute("aria-label", paused ? "Play cover animation" : "Pause cover animation");
+  };
+
+  const tryPlay = async () => {
+    try {
+      await video.play();
+    } catch {
+      userPaused = true;
+    }
+    updateToggle();
+  };
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    video.pause();
+  } else {
+    stage?.addEventListener("pointerenter", () => {
+      userPaused = false;
+      tryPlay();
+    }, { once: true });
+  }
+
+  toggle.addEventListener("click", () => {
+    if (video.paused) {
+      userPaused = false;
+      tryPlay();
+    } else {
+      userPaused = true;
+      video.pause();
+      updateToggle();
+    }
+  });
+
+  video.addEventListener("play", updateToggle);
+  video.addEventListener("pause", updateToggle);
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      video.pause();
+    } else if (!userPaused) {
+      tryPlay();
+    }
+  });
+  updateToggle();
 }
 
 function setupCalendar(data) {
@@ -493,6 +558,7 @@ async function init() {
   document.documentElement.classList.add("js");
   setupMenu();
   setupKineticSignals();
+  setupVideoCover();
   try {
     const response = await fetch(EVENT_JSON, { cache: "no-store" });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
