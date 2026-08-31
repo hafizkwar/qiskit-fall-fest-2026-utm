@@ -1581,6 +1581,231 @@ h3 {
   }
 }
 
+/* 2026 festival poster system */
+:root {
+  --poster-black: #08090a;
+  --poster-cream: #f5f2e8;
+  --poster-cyan: #23d9ce;
+  --poster-coral: #ff5a3d;
+  --poster-acid: #d8ff4f;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: var(--poster-cream);
+    --surface: #ece8dd;
+    --surface-raised: #e0dbce;
+    --border: #c9c3b6;
+    --border-strong: #6f6a61;
+    --text-primary: #111214;
+    --text-secondary: #55534e;
+    --accent-purple: #6e36c9;
+    --support-blue: #007f78;
+    --magenta: #b83220;
+    --teal: #007d76;
+    --link: #4f2396;
+  }
+}
+
+.site-header {
+  border-color: #303236;
+  background: color-mix(in srgb, var(--poster-black) 92%, transparent);
+  color: #f7f5ee;
+}
+
+.site-header .wordmark,
+.site-header .desktop-nav a,
+.site-header .menu-button,
+.site-header .button-quiet {
+  color: #f7f5ee;
+}
+
+.site-header .desktop-nav a {
+  opacity: 0.72;
+}
+
+.site-header .desktop-nav a:hover,
+.site-header .desktop-nav a[aria-current="page"] {
+  color: var(--poster-acid);
+  opacity: 1;
+}
+
+.site-header .desktop-nav a::after {
+  background: var(--poster-cyan);
+}
+
+.site-header .wordmark-mark {
+  border-color: var(--poster-acid);
+  background: var(--poster-acid);
+  color: var(--poster-black);
+}
+
+.site-header .button-primary {
+  background: var(--poster-coral);
+  color: var(--poster-black);
+}
+
+.site-header .button-primary:hover {
+  background: var(--poster-acid);
+}
+
+.mobile-nav {
+  border-color: #303236;
+  background: var(--poster-black);
+}
+
+.mobile-nav a {
+  border-color: #303236;
+  color: #f7f5ee;
+}
+
+.hero {
+  --text-primary: #f7f5ee;
+  --text-secondary: #aaa89f;
+  --surface: #151719;
+  --border: #303236;
+  --border-strong: #666970;
+  --accent-purple: #a970ff;
+  --deep-purple: #7440bd;
+  --link: var(--poster-acid);
+  isolation: isolate;
+  background: var(--poster-black);
+  color: var(--text-primary);
+}
+
+.hero::before {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(106deg, transparent 0 59%, color-mix(in srgb, var(--poster-cyan) 15%, transparent) 59% 60.5%, transparent 60.5% 72%, color-mix(in srgb, var(--poster-coral) 14%, transparent) 72% 74%, transparent 74%),
+    repeating-linear-gradient(90deg, transparent 0 calc(8.333vw - 1px), #242628 calc(8.333vw - 1px) 8.333vw);
+  content: "";
+}
+
+.hero::after {
+  position: absolute;
+  top: 11%;
+  right: -0.08em;
+  z-index: -1;
+  color: transparent;
+  content: "Q / 26";
+  font-family: var(--font-mono);
+  font-size: clamp(6rem, 18vw, 18rem);
+  letter-spacing: -0.1em;
+  line-height: 0.8;
+  opacity: 0.32;
+  pointer-events: none;
+  -webkit-text-stroke: 1px var(--poster-cyan);
+}
+
+.hero-grid {
+  position: relative;
+}
+
+.hero-grid::after {
+  position: absolute;
+  right: 0;
+  bottom: var(--space-5);
+  color: var(--poster-cyan);
+  content: "THE CIRCUIT STARTS HERE / 24.10.26";
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  writing-mode: vertical-rl;
+}
+
+.hero h1 {
+  max-width: 9.2ch;
+  margin-bottom: var(--space-4);
+  font-size: clamp(3.6rem, 12vw, 9.5rem);
+  font-weight: 700;
+  letter-spacing: -0.07em;
+  line-height: 0.82;
+  text-transform: uppercase;
+}
+
+.hero .eyebrow {
+  display: inline-flex;
+  margin-bottom: var(--space-5);
+  padding: 0.4rem 0.55rem;
+  background: var(--poster-cyan);
+  color: var(--poster-black);
+  font-weight: 700;
+}
+
+.hero-tagline {
+  color: var(--poster-acid);
+  font-size: clamp(1rem, 1.8vw, 1.45rem);
+  text-transform: uppercase;
+}
+
+.hero .event-lockup {
+  border-top-color: #71747a;
+}
+
+.hero .event-lockup p {
+  border-bottom-color: #303236;
+}
+
+.hero .event-lockup span {
+  color: var(--poster-coral);
+}
+
+.hero .button-primary {
+  background: var(--poster-coral);
+  color: var(--poster-black);
+}
+
+.hero .button-primary:hover {
+  background: var(--poster-acid);
+}
+
+.hero .button-secondary:hover {
+  border-color: var(--poster-cyan);
+  background: var(--poster-cyan);
+  color: var(--poster-black);
+}
+
+.countdown-panel {
+  border-top: 3px solid var(--poster-acid);
+  box-shadow: 0.75rem 0.75rem 0 var(--poster-coral);
+}
+
+.countdown strong {
+  color: var(--poster-cyan);
+}
+
+.hero-visual {
+  top: 17%;
+  right: -22%;
+  width: min(44rem, 96vw);
+  color: var(--poster-cyan);
+  filter: drop-shadow(0 0 1.2rem color-mix(in srgb, var(--poster-cyan) 35%, transparent));
+  opacity: 0.64;
+}
+
+.hero-visual .node {
+  color: var(--poster-acid);
+}
+
+@media (min-width: 56.25rem) {
+  .hero-copy,
+  .hero-actions {
+    grid-column: 1 / 8;
+  }
+
+  .countdown-panel {
+    grid-column: 9 / -1;
+  }
+
+  .hero-visual {
+    top: 6%;
+    right: -4%;
+    width: min(48rem, 57vw);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
