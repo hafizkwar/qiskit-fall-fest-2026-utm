@@ -1,6 +1,6 @@
-import { QuantumScene } from "./quantum-scene.js?v=20260901f";
-import { ScrollDirector, setupReveals, setupCardTilt } from "./scroll-director.js?v=20260901b";
-import { SceneInteraction } from "./interaction.js?v=20260901b";
+import { QuantumScene } from "./quantum-scene.js?v=20260901g";
+import { ScrollDirector, setupReveals, setupCardTilt } from "./scroll-director.js?v=20260901c";
+import { SceneInteraction } from "./interaction.js?v=20260901c";
 
 const EVENT_START = new Date("2026-10-24T08:00:00+08:00");
 const EVENT_END = new Date("2026-10-24T18:00:00+08:00");
@@ -107,12 +107,12 @@ function startExperience() {
     document.documentElement.classList.add("webgl-failed");
     return;
   }
-  const director = reduced ? null : new ScrollDirector((act, progress) => scene.setAct(act, progress));
+  const director = reduced ? null : new ScrollDirector((act, progress, globalProgress) => scene.setAct(act, progress, globalProgress));
   if (reduced) {
     document.body.dataset.stageTheme = "cream";
-    scene.setAct(1, 0);
+    scene.setAct(1, 0, 0);
   }
-  new SceneInteraction(document.querySelector(".hero"), (x, y) => scene.setRotation(x, y), reduced);
+  new SceneInteraction(document.documentElement, (x, y) => scene.setRotation(x, y), reduced);
   markSchedulePulses(scene);
   const frameTimes = [];
   let last = performance.now();
@@ -125,6 +125,10 @@ function startExperience() {
     if (elapsed < 250) frameTimes.push(elapsed);
     director?.tick();
     scene.render();
+    canvas.dataset.act = String(scene.act);
+    canvas.dataset.scroll = scene.globalProgress.toFixed(3);
+    canvas.dataset.rotationX = scene.rotation.x.toFixed(3);
+    canvas.dataset.rotationY = scene.rotation.y.toFixed(3);
     if (frameTimes.length === 90) {
       const median = [...frameTimes].sort((a, b) => a - b)[45];
       if (median > 20 && scene.quality > 0) scene.lowerQuality();

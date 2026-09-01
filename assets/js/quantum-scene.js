@@ -43,6 +43,9 @@ export class QuantumScene {
     this.rotation = { x: 0, y: 0 };
     this.act = 1;
     this.progress = 0;
+    this.globalTarget = 0;
+    this.globalProgress = 0;
+    this.previousGlobalProgress = 0;
     this.pulse = 0;
     this.quality = 2;
     this.weights = [1, 0, 0, 0, 0];
@@ -59,6 +62,8 @@ export class QuantumScene {
     this.scene.add(this.root);
     this.groups = [this.createBloch(), this.createLattice(), this.createCircuit(), this.createCryostat(), this.createConstellation()];
     this.groups.forEach((group) => this.root.add(remember(group)));
+    this.orbit = remember(this.createScrollOrbit());
+    this.root.add(this.orbit);
     this.particles = this.createParticles(mobile ? 1200 : 4000);
     this.scene.add(this.particles);
     this.addLights();
@@ -96,6 +101,39 @@ export class QuantumScene {
     group.add(core);
     group.position.set(3.25, .15, 0);
     group.userData.base = group.position.clone();
+    return group;
+  }
+
+  createScrollOrbit() {
+    const group = new THREE.Group();
+    const shell = new THREE.Mesh(
+      new THREE.SphereGeometry(2.75, 32, 22),
+      new THREE.MeshBasicMaterial({ color: C.pink, wireframe: true, transparent: true, opacity: .13 })
+    );
+    shell.material.userData.opacity = .13;
+    group.add(shell);
+    [
+      [2.82, C.coral, .7, .18, .2, 0],
+      [3.02, C.pink, .8, Math.PI / 2, .35, .5],
+      [3.18, C.cold, .48, Math.PI / 3, Math.PI / 2, -.35]
+    ].forEach(([radius, color, opacity, x, y, z]) => {
+      const ring = new THREE.Mesh(new THREE.TorusGeometry(radius, .035, 8, 128), material(color, opacity, color));
+      ring.rotation.set(x, y, z);
+      group.add(ring);
+    });
+    const core = new THREE.Mesh(new THREE.IcosahedronGeometry(.46, 3), material(C.pink, .78, C.pink));
+    group.add(core);
+    const satellites = new THREE.Group();
+    for (let index = 0; index < 8; index += 1) {
+      const angle = index / 8 * Math.PI * 2;
+      const node = new THREE.Mesh(new THREE.IcosahedronGeometry(index % 3 === 0 ? .13 : .075, 1), material(index % 2 ? C.coral : C.cold, .9, C.pink));
+      node.position.set(Math.cos(angle) * 3.18, Math.sin(angle) * 1.1, Math.sin(angle) * 2.65);
+      satellites.add(node);
+    }
+    satellites.rotation.x = .55;
+    group.add(satellites);
+    group.position.set(this.mobile ? 2.1 : 4.5, -2.8, -1.8);
+    group.scale.setScalar(this.mobile ? .68 : .82);
     return group;
   }
 
@@ -230,11 +268,12 @@ export class QuantumScene {
   setRotation(x, y) { this.target.x = x; this.target.y = y; }
   triggerPulse() { this.pulse = 1; }
 
-  setAct(act, progress = 0) {
+  setAct(act, progress = 0, globalProgress = this.globalTarget) {
     const next = Math.max(1, Math.min(5, act));
     const changed = next !== this.act;
     this.act = next;
     this.progress = progress;
+    this.globalTarget = Math.max(0, Math.min(1, globalProgress));
     if (!changed) return;
     const dark = this.act >= 2 && this.act <= 4;
     this.particles.material.uniforms.uColor.value.setHex(this.act === 4 ? C.cold : dark ? C.coral : C.maroon);
@@ -274,6 +313,22 @@ export class QuantumScene {
     this.rotation.x += (this.target.x - this.rotation.x) * damp;
     this.rotation.y += (this.target.y - this.rotation.y) * damp;
     this.root.rotation.set(this.rotation.x, this.rotation.y, 0);
+    this.globalProgress += (this.globalTarget - this.globalProgress) * (this.reducedMotion ? 1 : .085);
+    const scrollVelocity = Math.abs(this.globalProgress - this.previousGlobalProgress);
+    this.previousGlobalProgress = this.globalProgress;
+    const scroll = this.globalProgress;
+    const orbitArc = Math.sin(scroll * Math.PI);
+    const orbitStartX = this.mobile ? 2.1 : 4.5;
+    const orbitTravelX = this.mobile ? 3.9 : 8;
+    this.orbit.position.x = orbitStartX - scroll * orbitTravelX + Math.sin(scroll * Math.PI * 2) * .42;
+    this.orbit.position.y = -2.8 + scroll * 5.4 + Math.sin(time * .55) * .12;
+    this.orbit.position.z = -1.8 + orbitArc * 2.35;
+    this.orbit.scale.setScalar((this.mobile ? .68 : .82) + orbitArc * (this.mobile ? .18 : .34));
+    if (!this.reducedMotion) {
+      this.orbit.rotation.y += delta * (.22 + Math.min(2.4, scrollVelocity * 180));
+      this.orbit.rotation.x = .22 + Math.sin(scroll * Math.PI * 2) * .55;
+      this.orbit.rotation.z = -.18 + scroll * Math.PI * 1.65;
+    }
     const active = this.groups[this.act - 1];
     if (!this.reducedMotion && active) {
       active.rotation.y += delta * (this.act === 3 ? .08 : .18);

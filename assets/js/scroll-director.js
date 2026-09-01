@@ -8,16 +8,8 @@ export class ScrollDirector {
     this.activeNode = this.sections[0];
     this.raw = 0;
     this.smooth = 0;
-    this.observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        this.activeNode = entry.target;
-        this.active = Number(entry.target.dataset.act || 1);
-        document.body.dataset.stageTheme = entry.target.dataset.theme || THEMES[this.active] || "cream";
-        if (this.active === 3) document.dispatchEvent(new CustomEvent("circuit-pulse"));
-      });
-    }, { rootMargin: "-45% 0px -45% 0px", threshold: 0 });
-    this.sections.forEach((section) => this.observer.observe(section));
+    this.globalRaw = 0;
+    this.globalSmooth = 0;
     this.read = this.read.bind(this);
     addEventListener("scroll", this.read, { passive: true });
     addEventListener("resize", this.read, { passive: true });
@@ -25,19 +17,42 @@ export class ScrollDirector {
   }
 
   read() {
-    if (!this.activeNode) return;
+    if (!this.sections.length) return;
+    const viewportCenter = innerHeight * .5;
+    let nearest = this.sections[0];
+    let nearestDistance = Infinity;
+    this.sections.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      const distance = Math.abs(rect.top + rect.height * .5 - viewportCenter);
+      if (distance < nearestDistance) {
+        nearest = section;
+        nearestDistance = distance;
+      }
+    });
+    if (nearest !== this.activeNode) {
+      const previousAct = this.active;
+      this.activeNode = nearest;
+      this.active = Number(nearest.dataset.act || 1);
+      document.body.dataset.stageTheme = nearest.dataset.theme || THEMES[this.active] || "cream";
+      if (this.active === 3 && previousAct !== 3) document.dispatchEvent(new CustomEvent("circuit-pulse"));
+    } else {
+      document.body.dataset.stageTheme = nearest.dataset.theme || THEMES[this.active] || "cream";
+    }
     const rect = this.activeNode.getBoundingClientRect();
     const travel = Math.max(1, rect.height + innerHeight);
     this.raw = Math.max(0, Math.min(1, (innerHeight - rect.top) / travel));
+    const scrollRange = Math.max(1, document.documentElement.scrollHeight - innerHeight);
+    this.globalRaw = Math.max(0, Math.min(1, scrollY / scrollRange));
   }
 
   tick() {
     this.smooth += (this.raw - this.smooth) * .08;
-    this.onFrame(this.active, this.smooth);
+    this.globalSmooth += (this.globalRaw - this.globalSmooth) * .075;
+    document.body.style.setProperty("--scroll-progress", this.globalSmooth.toFixed(4));
+    this.onFrame(this.active, this.smooth, this.globalSmooth);
   }
 
   destroy() {
-    this.observer.disconnect();
     removeEventListener("scroll", this.read);
     removeEventListener("resize", this.read);
   }

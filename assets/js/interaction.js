@@ -1,27 +1,28 @@
 const DEG = Math.PI / 180;
 
 export class SceneInteraction {
-  constructor(hero, onRotate, reducedMotion = false) {
-    this.hero = hero;
+  constructor(surface, onRotate, reducedMotion = false) {
+    this.surface = surface;
     this.onRotate = onRotate;
     this.reducedMotion = reducedMotion;
     this.drag = null;
     this.claimed = false;
-    if (!hero || reducedMotion) return;
+    if (!surface || reducedMotion) return;
     this.move = this.move.bind(this);
     this.down = this.down.bind(this);
     this.up = this.up.bind(this);
-    hero.addEventListener("pointerdown", this.down, { passive: true });
-    hero.addEventListener("pointermove", this.move, { passive: false });
-    hero.addEventListener("pointerup", this.up, { passive: true });
-    hero.addEventListener("pointercancel", this.up, { passive: true });
-    hero.addEventListener("pointerleave", (event) => {
+    surface.addEventListener("pointerdown", this.down, { passive: true });
+    surface.addEventListener("pointermove", this.move, { passive: false });
+    surface.addEventListener("pointerup", this.up, { passive: true });
+    surface.addEventListener("pointercancel", this.up, { passive: true });
+    surface.addEventListener("pointerleave", (event) => {
       if (!this.drag && event.pointerType === "mouse") onRotate(0, 0);
     }, { passive: true });
+    addEventListener("blur", () => onRotate(0, 0), { passive: true });
   }
 
   blocked(target) {
-    return Boolean(target.closest("a, button, input, textarea, select, label, form"));
+    return target instanceof Element && Boolean(target.closest("a, button, input, textarea, select, label, form"));
   }
 
   down(event) {
@@ -31,11 +32,10 @@ export class SceneInteraction {
   }
 
   move(event) {
-    const rect = this.hero.getBoundingClientRect();
     if (!this.drag && event.pointerType === "mouse" && !this.blocked(event.target)) {
-      const nx = (event.clientX - rect.left) / rect.width - .5;
-      const ny = (event.clientY - rect.top) / rect.height - .5;
-      this.onRotate(-ny * 16 * DEG, nx * 24 * DEG);
+      const nx = event.clientX / Math.max(1, innerWidth) - .5;
+      const ny = event.clientY / Math.max(1, innerHeight) - .5;
+      this.onRotate(-ny * 20 * DEG, nx * 32 * DEG);
       return;
     }
     if (!this.drag || this.drag.pointer !== event.pointerId) return;
