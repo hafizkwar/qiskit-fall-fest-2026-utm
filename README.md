@@ -1,8 +1,8 @@
 # Qiskit Fall Fest 2026 @ UTM website
 
-A deployable static site for Qiskit Fall Fest 2026 @ UTM. It uses plain HTML, CSS, vanilla JavaScript modules, and a locally vendored, pinned copy of Three.js 0.185.1. There is no package manager, build step, analytics, cookie, backend, or registration form.
+A deployable static site for Qiskit Fall Fest 2026 @ UTM. It uses plain HTML, CSS, vanilla JavaScript modules, and a locally vendored, pinned copy of Three.js 0.185.1. There is no package manager, build step, analytics, cookie, or backend. The registration interface is a local preview and does not transmit or store entries.
 
-The public experience has three routes: `index.html`, `about.html`, and `schedule.html`. A single fixed WebGL canvas creates five scroll-directed quantum scenes while all content remains accessible HTML. Pointer and horizontal touch rotation are progressively enhanced; reduced-motion and WebGL-failure visitors receive a static CSS treatment.
+The public experience has three routes: `index.html`, `schedule.html`, and `community.html`. A single fixed WebGL canvas creates five scroll-directed quantum scenes while all content remains accessible HTML. Pointer and horizontal touch rotation are progressively enhanced; reduced-motion and WebGL-failure visitors receive a static CSS treatment.
 
 ## Preview locally
 
@@ -28,7 +28,7 @@ The WebGL budget is 4,000 shader particles on desktop and 1,200 on coarse/mobile
 4. Put approved logos and speaker photos in `assets/img/`, then add their relative paths to `event.json` (for example, `assets/img/speaker-yap.webp`). Use WebP, declare dimensions in the rendered markup if the image treatment changes, and confirm usage permission.
 5. Add each sponsor to the `sponsors` array with `name`, local `logo`, `tier`, and `url`. Never edit the HTML sponsor strip.
 6. If the repository moves, update `site.canonicalBase`, `sitemap.xml`, and `robots.txt` with the new HTTPS URL.
-7. Preview locally and test `index.html`, `about.html`, `schedule.html`, the mobile menu, live countdown, WebGL fallback, reduced motion, and every navigation link.
+7. Preview locally and test `index.html`, `schedule.html`, `community.html`, the mobile menu, live countdown, registration preview, WebGL fallback, reduced motion, and every navigation link.
 8. Run the launch checks below, commit, and push to `main`. GitHub Pages serves the repository root because `.nojekyll` is present.
 
 ## Publish on GitHub Pages
@@ -37,7 +37,7 @@ The site is initially published under `hafizkwar`. To recreate that deployment, 
 
 ```powershell
 git init
-git add index.html about.html schedule.html assets content .nojekyll README.md LICENSE sitemap.xml robots.txt
+git add index.html schedule.html community.html assets content .nojekyll README.md LICENSE sitemap.xml robots.txt
 git commit -m "Launch Qiskit Fall Fest 2026 UTM website"
 git branch -M main
 git remote add origin https://github.com/hafizkwar/qiskit-fall-fest-2026-utm.git

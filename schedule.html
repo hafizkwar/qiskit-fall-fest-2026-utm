@@ -3,82 +3,137 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Schedule | Qiskit Fall Fest 2026 @ UTM</title>
-  <meta name="description" content="The detailed schedule for Qiskit Fall Fest 2026 at UTM on Saturday, 24 October 2026, from registration and keynotes to Qiskit sessions and lab visits.">
-  <meta name="theme-color" content="#1a1a1a">
-  <meta property="og:title" content="Schedule | Qiskit Fall Fest 2026 @ UTM">
-  <meta property="og:description" content="Plan a full day of talks, Qiskit workshops, student sharing, community building, and quantum lab visits.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://hafizkwar.github.io/qiskit-fall-fest-2026-utm/schedule.html">
-  <meta property="og:image" content="https://hafizkwar.github.io/qiskit-fall-fest-2026-utm/assets/img/hero-art.webp">
+  <title>Schedules | Qiskit Fall Fest 2026</title>
+  <meta name="description" content="The detailed tentative schedule for Qiskit Fall Fest 2026 at UTM on 24 October 2026.">
+  <meta name="theme-color" content="#fff8f6">
+  <meta property="og:title" content="Schedules | Qiskit Fall Fest 2026 @ UTM">
+  <meta property="og:description" content="Registration, keynotes, hands-on Qiskit sessions, community launch, and lab visits.">
+  <meta property="og:image" content="https://hafizkwar.github.io/qiskit-fall-fest-2026-utm/assets/img/quantum-lab.jpg">
   <link rel="canonical" href="https://hafizkwar.github.io/qiskit-fall-fest-2026-utm/schedule.html">
   <link rel="icon" href="assets/img/badge-pink.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500;600;700;800&amp;family=Sora:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="assets/css/stage.css?v=20260901j">
-  <script type="module" src="assets/js/main.js?v=20260901h"></script>
-  <noscript><style>[data-reveal]{opacity:1!important;transform:none!important}.menu-button{display:none!important}</style></noscript>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Schedule","name":"Qiskit Fall Fest 2026 @ UTM schedule","startDate":"2026-10-24T08:00:00+08:00","endDate":"2026-10-24T18:00:00+08:00","url":"https://hafizkwar.github.io/qiskit-fall-fest-2026-utm/schedule.html"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&amp;family=Hanken+Grotesk:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = { theme: { extend: {
+      colors: {
+        "surface-container-high": "#fde2de", "bright-maroon": "#A30000", "primary-fixed": "#ffdad4",
+        "surface-container": "#ffe9e6", "primary-fixed-dim": "#ffb4a8", "on-primary": "#ffffff",
+        "background": "#fff8f6", "primary": "#570000", "deep-maroon": "#5A0000", "surface-container-highest": "#f7ddd8",
+        "surface-container-low": "#fff0ee", "surface": "#fff8f6", "on-surface": "#261816",
+        "on-surface-variant": "#5a413d", "outline": "#8e706c", "outline-variant": "#e2bfb9"
+      },
+      spacing: { "margin-desktop": "47px", "margin-mobile": "20px", "gutter": "24px", "container-max": "1280px" },
+      fontFamily: { "label-sm": ["JetBrains Mono"], "body-md": ["Hanken Grotesk"], "display-xl": ["Sora"], "headline-lg": ["Sora"] },
+      fontSize: {
+        "label-sm": ["11px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "500" }],
+        "body-md": ["15px", { lineHeight: "22px", fontWeight: "400" }],
+        "display-xl": ["53px", { lineHeight: "1.08", letterSpacing: "-0.03em", fontWeight: "700" }]
+      }
+    } } };
+  </script>
+  <style>
+    .schedule-page { font-family: "Hanken Grotesk", sans-serif; color: #261816; }
+    .schedule-page .glass-card { background: rgba(255,255,255,.72); backdrop-filter: blur(20px); border: 1px solid rgba(163,0,0,.12); box-shadow: 0 4px 20px rgba(0,0,0,.03); }
+    .schedule-page .timeline-line { position: absolute; inset: 0 auto 0 24px; z-index: 0; width: 1px; background: linear-gradient(#A30000,#5A0000); }
+    .schedule-page .timeline-node { position: absolute; left: 24px; z-index: 2; width: 12px; height: 12px; transform: translateX(-50%); border: 1.5px solid #A30000; border-radius: 50%; background: #fff8f6; box-shadow: 0 0 12px rgba(163,0,0,.22); }
+    .schedule-page .gradient-text { color: #850000; background: linear-gradient(90deg,#5A0000,#A30000); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .schedule-page .schedule-brand { font-size: clamp(1.9rem,4.7vw,3.15rem); line-height: 1; }
+    .schedule-page .schedule-row { min-height: 142px; }
+    .schedule-page .schedule-copy p { max-width: 28rem; }
+    @media (min-width: 768px) {
+      .schedule-page .timeline-line { left: 50%; transform: translateX(-50%); }
+      .schedule-page .timeline-node { left: 50%; }
+    }
+    @media (max-width: 767px) {
+      .schedule-page .schedule-row { align-items: stretch; }
+      .schedule-page .schedule-copy, .schedule-page .schedule-visual { padding-left: 3.5rem; text-align: left; }
+      .schedule-page .schedule-copy p { max-width: none; }
+    }
+  </style>
+  <link rel="stylesheet" href="assets/css/stage.css?v=20260901k">
+  <script type="module" src="assets/js/main.js?v=20260901i"></script>
+  <noscript><style>[data-reveal]{opacity:1!important;transform:none!important}</style></noscript>
 </head>
-<body data-stage-theme="ink" style="font-family:'Hanken Grotesk',sans-serif">
+<body class="schedule-page min-h-screen overflow-x-hidden bg-background font-body-md text-body-md" data-stage-theme="cream">
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="site-layer">
-    <header class="site-header">
-      <nav class="nav-shell" aria-label="Primary navigation">
-        <a class="brand" href="index.html"><img src="assets/img/badge-pink.svg" alt=""><div><strong>Qiskit Fall Fest</strong><span>UTM · 2026</span></div></a>
-        <div class="desktop-nav"><a href="index.html">Home</a><a href="about.html">About</a><a href="schedule.html" aria-current="page">Schedule</a><a href="index.html#community">Community</a><a class="nav-cta" href="index.html#register">Register</a></div>
-        <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-button>Menu</button>
-      </nav>
-      <nav class="menu-panel" id="mobile-menu" aria-label="Mobile navigation" data-menu-panel data-open="false"><a href="index.html">Home</a><a href="about.html">About</a><a href="schedule.html" aria-current="page">Schedule</a><a href="index.html#community">Community</a><a href="index.html#register">Register</a></nav>
-    </header>
-
-    <main id="main">
-      <section class="act-section hero" data-act="3" data-theme="ink">
-        <div class="section-shell hero-grid">
-          <div>
-            <p class="eyebrow" data-reveal>24 October 2026 · UTM</p>
-            <h1 data-reveal>Detailed Event <span class="accent">Schedule.</span></h1>
-            <p class="lede" data-reveal>Explore the full tentative programme for Qiskit Fall Fest 2026 @ UTM. From introductory registration to hands-on quantum lab visits, prepare for a day bridging software and awaiting hardware.</p>
-            <div class="button-row" data-reveal><a class="button primary" href="#timeline">Start at 08:00</a><a class="button" href="index.html#register">Registration status</a></div>
-            <div class="stat-strip" data-reveal><span>08:00–18:00 MYT</span><span>ICC · UTM Johor Bahru</span><span>Beginner-friendly</span></div>
-          </div>
-          <div class="hero-visual" aria-label="Interactive quantum circuit. Move your pointer or drag horizontally to rotate it.">
-            <figure class="hero-media" data-tilt data-reveal><img src="assets/img/hero-art.webp" alt="Qiskit Fall Fest 2026 bird artwork"></figure>
-          </div>
+  <div class="site-layer min-h-screen">
+    <nav class="fixed top-0 z-50 w-full border-b border-outline-variant/40 bg-white/88 shadow-sm backdrop-blur-xl" aria-label="Primary navigation">
+      <div class="mx-auto flex max-w-container-max items-center justify-between gap-3 px-margin-mobile py-4 md:px-margin-desktop">
+        <a class="schedule-brand flex-shrink-0 font-display-xl font-bold tracking-tighter text-deep-maroon" href="index.html">Qiskit Fall Fest '26</a>
+        <div class="hidden items-center gap-6 font-label-sm text-[9px] uppercase md:flex">
+          <a class="border-b-2 border-bright-maroon pb-1 font-bold text-bright-maroon" href="schedule.html" aria-current="page">Schedules</a>
+          <a class="text-on-surface-variant transition-colors hover:text-primary" href="#workshops">Workshops</a>
+          <a class="text-on-surface-variant transition-colors hover:text-primary" href="community.html#updates">Research</a>
+          <a class="text-on-surface-variant transition-colors hover:text-primary" href="#lab-visits">Hardware</a>
+          <a class="text-on-surface-variant transition-colors hover:text-primary" href="community.html">UTM Hub</a>
         </div>
-      </section>
+        <a class="hidden rounded-full bg-gradient-to-r from-deep-maroon to-bright-maroon px-6 py-3 font-label-sm text-[9px] uppercase text-on-primary shadow-[0_5px_14px_rgba(163,0,0,.2)] md:block" href="community.html#register">Register Now</a>
+        <button class="text-primary md:hidden" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-button><span class="material-symbols-outlined">menu</span></button>
+      </div>
+      <div class="menu-panel" id="mobile-menu" data-menu-panel data-open="false"><a href="index.html">Home</a><a href="schedule.html">Schedules</a><a href="#workshops">Workshops</a><a href="community.html#updates">Research</a><a href="#lab-visits">Hardware</a><a href="community.html">UTM Hub</a></div>
+    </nav>
 
-      <section class="act-section" id="timeline" data-act="3" data-theme="ink">
-        <div class="section-shell">
-          <p class="eyebrow" data-reveal>Full tentative programme</p>
-          <h2 data-reveal>Follow the day's <span class="accent">milestones.</span></h2>
-          <p class="lede" data-reveal>Times are shown in Malaysia Time (MYT, UTC+8). The organising committee may refine operational details closer to the event.</p>
-          <div class="timeline">
-            <div class="timeline-item" data-reveal><time class="timeline-time">08:30</time><article class="glass-card timeline-card" data-tilt><h3>Registration &amp; Welcome</h3><p>Check in at the ICC Innovation &amp; Commercialisation Centre, collect your mission patch, and enjoy morning refreshments.</p><span class="tag">ICC Main Lobby</span></article></div>
-            <div class="timeline-item" data-reveal><time class="timeline-time">09:00</time><article class="glass-card timeline-card" data-tilt><h3>Opening Ceremonies</h3><p>Inaugural speeches by the Deans of the Faculty of Computing and Faculty of Science, outlining the vision for quantum at UTM.</p><span class="tag">Deans FC &amp; FS</span></article></div>
-            <div class="timeline-item" data-reveal><time class="timeline-time">10:45</time><article class="glass-card timeline-card" data-tilt><h3>Expert Keynotes</h3><p>Quantum State Translation with Dr. Yap Yung Szen, followed by Algorithmic Readiness with Ts. Dr. Nur Haliza Abdul Wahab.</p><span class="tag">Technical talks</span></article></div>
-            <div class="timeline-item" data-reveal><time class="timeline-time">11:15</time><article class="glass-card timeline-card" data-tilt><h3>Interactive Sessions</h3><p>Hands-on experience with Qiskit for beginners. Bring your laptop to write your first quantum circuits.</p><span class="tag">Beginner friendly</span></article></div>
-            <div class="timeline-item" data-reveal><time class="timeline-time">12:45</time><article class="glass-card timeline-card" data-tilt><h3>Lunch &amp; Networking Break</h3><p>Recharge, explore the exhibition booth, and connect with participants across computing and science.</p><span class="tag">Networking</span></article></div>
-            <div class="timeline-item" data-reveal><time class="timeline-time">15:15</time><article class="glass-card timeline-card" data-tilt><h3>Quantum Community Launch</h3><p>Official establishment of the UTM quantum student community and affiliation with MyQI.</p><span class="tag">Community</span></article></div>
-            <div class="timeline-item" data-reveal><time class="timeline-time">17:00</time><article class="glass-card timeline-card" data-tilt><h3>Exclusive Lab Visits</h3><p>Guided tours of the AQSolotl and Quantum Labs. Witness “Hardware still Awaiting” in physical reality.</p><span class="tag">AQSolotl &amp; Quantum Lab</span></article></div>
-          </div>
-        </div>
-      </section>
+    <main class="relative z-10 flex-grow px-margin-mobile pb-24 pt-28 md:px-margin-desktop" id="main">
+      <header class="hero mx-auto mb-12 max-w-4xl text-center" data-act="3" data-theme="cream">
+        <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/5 px-4 py-1" data-reveal><span class="material-symbols-outlined text-[15px] text-deep-maroon">calendar_month</span><span class="font-label-sm text-label-sm uppercase text-primary">24th October 2026</span></div>
+        <h1 class="gradient-text mb-4 font-display-xl text-[42px] font-bold leading-tight md:text-display-xl" data-reveal>Detailed Event Schedule</h1>
+        <p class="mx-auto max-w-2xl text-on-surface-variant" data-reveal>Explore the full tentative program for Qiskit Fall Fest 2026 @ UTM. From introductory registration to hands-on quantum lab visits, prepare for a day bridging software and awaiting hardware.</p>
+      </header>
 
-      <section class="act-section compact" data-act="3" data-theme="ink">
-        <div class="section-shell split">
-          <div><p class="eyebrow" data-reveal>Prepare your state</p><h2 data-reveal>Bring a laptop. Bring <span class="accent">curiosity.</span></h2></div>
-          <div class="cards">
-            <article class="glass-card" data-tilt data-reveal><h3>Laptop + charger</h3><p>Both interactive Qiskit sessions are designed for hands-on participation.</p></article>
-            <article class="glass-card" data-tilt data-reveal><h3>IBM Quantum account</h3><p>Create your cloud account before arriving so the practical sessions can start smoothly.</p></article>
-            <article class="glass-card" data-tilt data-reveal><h3>Student identification</h3><p>Bring your student ID and arrive before 08:30 for breakfast and check-in.</p></article>
-            <article class="glass-card" data-tilt data-reveal><h3>No prior experience</h3><p>The programme is designed for beginners across computing, science, and other fields.</p></article>
-          </div>
+      <section class="relative mx-auto max-w-5xl" aria-label="Tentative event programme">
+        <div class="timeline-line" aria-hidden="true"></div>
+        <div class="space-y-12 md:space-y-20">
+          <article class="schedule-row relative flex w-full flex-col items-center justify-between md:flex-row" data-act="3" data-theme="cream">
+            <span class="timeline-node top-8 md:top-1/2 md:-translate-y-1/2"></span>
+            <div class="schedule-copy w-full pt-6 text-left md:w-5/12 md:pr-12 md:pt-0 md:text-right" data-reveal><div class="mb-2 font-label-sm text-label-sm text-bright-maroon">08:30 AM</div><h2 class="mb-2 font-headline-lg text-2xl">Registration &amp; Welcome</h2><p class="ml-auto text-on-surface-variant">Check-in at the ICC Innovation &amp; Commercialisation Centre, collect your mission patch, and enjoy morning refreshments.</p></div>
+            <div class="schedule-visual mt-4 w-full md:mt-0 md:w-5/12 md:pl-12" data-reveal><div class="glass-card rounded-xl p-6" data-tilt><span class="material-symbols-outlined mb-4 text-4xl text-primary">how_to_reg</span><div class="flex items-center gap-2 text-sm text-on-surface-variant"><span class="material-symbols-outlined text-[16px]">location_on</span><span>ICC Main Lobby</span></div></div></div>
+          </article>
+
+          <article class="schedule-row relative flex w-full flex-col items-center justify-between md:flex-row-reverse" data-act="3" data-theme="cream">
+            <span class="timeline-node top-8 md:top-1/2 md:-translate-y-1/2"></span>
+            <div class="schedule-copy w-full pt-6 text-left md:w-5/12 md:pl-12 md:pt-0" data-reveal><div class="mb-2 font-label-sm text-label-sm text-bright-maroon">09:00 AM</div><h2 class="mb-2 font-headline-lg text-2xl">Opening Ceremonies</h2><p class="text-on-surface-variant">Inaugural speeches by the Deans of the Faculty of Computing and Faculty of Science, outlining the vision for quantum at UTM.</p></div>
+            <div class="schedule-visual mt-4 w-full md:mt-0 md:w-5/12 md:pr-12 md:text-right" data-reveal><div class="glass-card rounded-xl p-6" data-tilt><span class="material-symbols-outlined mb-4 text-4xl text-primary">campaign</span><div class="flex items-center gap-2 text-sm text-on-surface-variant md:justify-end"><span class="material-symbols-outlined text-[16px]">person</span><span>Deans FC &amp; FS</span></div></div></div>
+          </article>
+
+          <article class="schedule-row relative flex w-full flex-col items-center justify-between md:flex-row" data-act="3" data-theme="blush">
+            <span class="timeline-node top-8 md:top-1/2 md:-translate-y-1/2"></span>
+            <div class="schedule-copy w-full pt-6 text-left md:w-5/12 md:pr-12 md:pt-0 md:text-right" data-reveal><div class="mb-2 font-label-sm text-label-sm text-bright-maroon">10:45 AM</div><h2 class="mb-2 font-headline-lg text-2xl">Expert Keynotes</h2><p class="ml-auto text-on-surface-variant">Deep dive into the intersection of quantum hardware and software ecosystems with leading researchers.</p></div>
+            <div class="schedule-visual mt-4 w-full md:mt-0 md:w-5/12 md:pl-12" data-reveal><div class="glass-card rounded-xl border-l-4 border-l-deep-maroon p-6" data-tilt><div class="space-y-4"><div><h3 class="font-bold text-primary">Quantum State Translation</h3><p class="text-sm text-on-surface-variant">Dr. Yap Yung Szen</p></div><div><h3 class="font-bold text-primary">Algorithmic Readiness</h3><p class="text-sm text-on-surface-variant">Ts. Dr. Nur Haliza Abdul Wahab</p></div></div></div></div>
+          </article>
+
+          <article class="schedule-row relative flex w-full flex-col items-center justify-between md:flex-row-reverse" id="workshops" data-act="3" data-theme="blush">
+            <span class="timeline-node top-8 md:top-1/2 md:-translate-y-1/2"></span>
+            <div class="schedule-copy w-full pt-6 text-left md:w-5/12 md:pl-12 md:pt-0" data-reveal><div class="mb-2 font-label-sm text-label-sm text-bright-maroon">11:15 AM</div><h2 class="mb-2 font-headline-lg text-2xl">Interactive Sessions</h2><p class="text-on-surface-variant">Hands-on experience with Qiskit for beginners. Bring your laptops to write your first quantum circuits.</p></div>
+            <div class="schedule-visual mt-4 w-full md:mt-0 md:w-5/12 md:pr-12 md:text-right" data-reveal><div class="glass-card rounded-xl p-6" data-tilt><span class="material-symbols-outlined mb-4 text-4xl text-primary">terminal</span><div class="inline-block rounded-full bg-surface-container-highest px-3 py-1 font-label-sm text-xs text-primary">Beginner Friendly</div></div></div>
+          </article>
+
+          <div class="relative flex w-full justify-center py-8 opacity-60" data-act="4" data-theme="rose"><span class="timeline-node"></span><div class="rounded-full bg-surface-container-highest px-4 py-2 font-label-sm text-xs tracking-widest text-on-surface-variant">LUNCH &amp; NETWORKING BREAK</div></div>
+
+          <article class="schedule-row relative flex w-full flex-col items-center justify-between md:flex-row" data-act="5" data-theme="rose">
+            <span class="timeline-node top-8 md:top-1/2 md:-translate-y-1/2"></span>
+            <div class="schedule-copy w-full pt-6 text-left md:w-5/12 md:pr-12 md:pt-0 md:text-right" data-reveal><div class="mb-2 font-label-sm text-label-sm text-bright-maroon">15:15 PM</div><h2 class="mb-2 font-headline-lg text-2xl">Quantum Community Launch</h2><p class="ml-auto text-on-surface-variant">Official establishment of the UTM quantum student community and affiliation with MyQI.</p></div>
+            <div class="schedule-visual mt-4 w-full md:mt-0 md:w-5/12 md:pl-12" data-reveal><div class="glass-card rounded-xl p-6" data-tilt><span class="material-symbols-outlined mb-4 text-4xl text-primary">groups</span><p class="text-sm italic text-on-surface-variant">Building the next generation of researchers.</p></div></div>
+          </article>
+
+          <article class="schedule-row relative flex w-full flex-col items-center justify-between md:flex-row-reverse" id="lab-visits" data-act="4" data-theme="blush">
+            <span class="timeline-node top-8 bg-deep-maroon md:top-1/2 md:-translate-y-1/2"></span>
+            <div class="schedule-copy w-full pt-6 text-left md:w-5/12 md:pl-12 md:pt-0" data-reveal><div class="mb-2 font-label-sm text-label-sm text-deep-maroon">17:00 PM</div><h2 class="mb-2 font-headline-lg text-2xl">Exclusive Lab Visits</h2><p class="text-on-surface-variant">Guided tours of the AQSolotl &amp; Quantum Labs. Witness "Hardware still Awaiting" in physical reality.</p></div>
+            <div class="schedule-visual mt-4 w-full md:mt-0 md:w-5/12 md:pr-12 md:text-right" data-reveal><figure class="glass-card overflow-hidden rounded-xl p-2" data-tilt><img class="h-48 w-full rounded-lg object-cover opacity-90" src="assets/img/quantum-lab.jpg" alt="Advanced quantum laboratory"></figure></div>
+          </article>
         </div>
       </section>
     </main>
-    <footer><div class="section-shell footer-row"><span>Schedule · Qiskit Fall Fest 2026 @ UTM</span><span><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="index.html#community">Community</a></span></div></footer>
+
+    <footer class="relative z-10 w-full border-t border-outline-variant/50 bg-surface-container-low py-12 text-on-surface-variant">
+      <div class="mx-auto grid max-w-container-max grid-cols-1 gap-6 px-margin-mobile md:grid-cols-2 md:px-margin-desktop lg:grid-cols-4">
+        <div class="col-span-1 lg:col-span-2"><div class="mb-4 font-label-sm text-label-sm uppercase tracking-widest text-deep-maroon">Qiskit Fall Fest '26</div><p class="max-w-sm text-sm">© 2026 Qiskit Fall Fest @ UTM. Powered by IBM Quantum &amp; UTM Robotics.</p></div>
+        <div class="flex flex-col space-y-3"><a class="font-label-sm text-label-sm hover:text-primary" href="#">LinkedIn</a><a class="font-label-sm text-label-sm hover:text-primary" href="#">Instagram</a></div>
+        <div class="flex flex-col space-y-3"><a class="font-label-sm text-label-sm hover:text-primary" href="#">Code of Conduct</a><a class="font-label-sm text-label-sm hover:text-primary" href="#">Privacy Policy</a><a class="font-label-sm text-label-sm hover:text-primary" href="https://www.ibm.com/quantum">IBM Research</a></div>
+      </div>
+    </footer>
   </div>
 </body>
 </html>

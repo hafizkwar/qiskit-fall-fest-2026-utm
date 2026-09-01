@@ -56,6 +56,18 @@ function setupCountdown() {
   setInterval(update, 1000);
 }
 
+function setupRegistrationPreview() {
+  const form = document.querySelector("[data-demo-registration]");
+  const status = document.querySelector("[data-registration-status]");
+  if (!form || !status) return;
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+    status.hidden = false;
+    status.textContent = "Registration preview complete. The official committee form will be linked here when it opens; nothing entered on this page was sent or stored.";
+  });
+}
+
 function markSchedulePulses(scene) {
   const cards = document.querySelectorAll(".timeline-card");
   if (!cards.length) return;
@@ -72,6 +84,7 @@ function startExperience() {
   if (reduced) document.querySelectorAll("video").forEach((video) => { video.removeAttribute("autoplay"); video.pause(); });
   setupMenu();
   setupCountdown();
+  setupRegistrationPreview();
   setupReveals(reduced);
   setupCardTilt(reduced);
   if (!webglAvailable()) {

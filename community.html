@@ -1,77 +1,143 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>UTM Quantum Community | Qiskit Fall Fest 2026 @ UTM</title>
-  <meta name="description" content="Meet the student-led UTM Quantum Community launching at Qiskit Fall Fest 2026, with beginner study circles, student sharing, and a path to MyQI affiliation.">
-  <meta name="theme-color" content="#5b0b25">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="UTM Quantum Community">
-  <meta property="og:description" content="A student-led home for quantum learners across physics and computing at UTM.">
-  <meta property="og:image" content="assets/img/og-image.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/fonts/IBMPlexSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/IBMPlexSans-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/main.css">
-  <script type="module" src="assets/js/app.js"></script>
+  <title>UTM Hub | Qiskit Fall Fest 2026</title>
+  <meta name="description" content="Join the Qiskit Fall Fest 2026 UTM community hub and MyQI UTM Chapter.">
+  <meta name="theme-color" content="#fff8f6">
+  <meta property="og:title" content="UTM Hub | Qiskit Fall Fest 2026">
+  <meta property="og:description" content="Connect with the UTM quantum community, event registration, research, and lab opportunities.">
+  <meta property="og:image" content="https://hafizkwar.github.io/qiskit-fall-fest-2026-utm/assets/img/community-hub-cover.jpg">
+  <link rel="canonical" href="https://hafizkwar.github.io/qiskit-fall-fest-2026-utm/community.html">
+  <link rel="icon" href="assets/img/badge-pink.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Sora:wght@400;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = { theme: { extend: {
+      colors: {
+        "surface-container-high": "#fde2de", "bright-maroon": "#A30000", "primary-fixed": "#ffdad4",
+        "surface-container": "#ffe9e6", "primary-fixed-dim": "#ffb4a8", "on-primary": "#ffffff",
+        "ink-black": "#1A1A1A", "background": "#fff8f6", "primary": "#570000", "deep-maroon": "#5A0000",
+        "primary-container": "#800000", "on-primary-container": "#ff8371", "surface-container-low": "#fff0ee",
+        "surface-container-lowest": "#ffffff", "surface": "#fff8f6", "on-surface": "#261816",
+        "on-surface-variant": "#5a413d", "outline": "#8e706c", "outline-variant": "#e2bfb9",
+        "secondary-fixed-dim": "#c6c6c7", "surface-variant": "#f7ddd8"
+      },
+      spacing: { "margin-desktop": "48px", "margin-mobile": "20px", "gutter": "24px", "container-max": "1280px" },
+      fontFamily: { "label-sm": ["JetBrains Mono"], "body-md": ["Hanken Grotesk"], "display-xl": ["Sora"], "headline-lg": ["Sora"] },
+      fontSize: {
+        "label-sm": ["11px", { lineHeight: "16px", letterSpacing: "0.08em", fontWeight: "500" }],
+        "body-md": ["15px", { lineHeight: "22px", fontWeight: "400" }],
+        "display-xl": ["56px", { lineHeight: "1.06", letterSpacing: "-0.025em", fontWeight: "700" }]
+      }
+    } } };
+  </script>
+  <style>
+    .community-page .glass-card { background: rgba(255,255,255,.8); box-shadow: 0 4px 12px rgba(0,0,0,.04); border: 1px solid rgba(226,191,185,.72); backdrop-filter: blur(20px); }
+    .community-page .glow-button { box-shadow: 0 4px 14px rgba(128,0,0,.2); transition: transform .3s ease, box-shadow .3s ease; }
+    .community-page .glow-button:hover { box-shadow: 0 7px 20px rgba(128,0,0,.24); transform: translateY(-2px); }
+    .community-page .input-glass { width: 100%; border: 1px solid #8e706c; border-radius: .5rem; background: rgba(255,255,255,.9); padding: .75rem 1rem; color: #261816; transition: border-color .2s ease, box-shadow .2s ease; }
+    .community-page .input-glass:focus { outline: none; border-color: #570000; box-shadow: 0 0 0 2px rgba(128,0,0,.1); }
+    .community-page .hub-cover img { width: 100%; height: 100%; object-fit: cover; }
+    @media (max-width: 767px) { .community-page .community-title { font-size: 3.2rem; line-height: 1.04; } }
+  </style>
+  <link rel="stylesheet" href="assets/css/stage.css?v=20260901k">
+  <script type="module" src="assets/js/main.js?v=20260901i"></script>
+  <noscript><style>[data-reveal]{opacity:1!important;transform:none!important}</style></noscript>
 </head>
-<body data-page="community">
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  <header class="site-header">
-    <div class="shell header-inner">
-      <a class="wordmark" href="index.html"><img class="wordmark-logo" src="assets/img/badge-pink.svg" width="42" height="42" alt=""><span class="wordmark-copy"><strong>Qiskit Fall Fest</strong><small>UTM · 2026</small></span></a>
-      <nav class="desktop-nav" aria-label="Primary navigation">
-        <a href="index.html#about">About</a><a href="index.html#agenda">Agenda</a><a href="index.html#speakers">Speakers</a>
-        <a href="resources.html" data-page-link="resources">Resources</a><a href="community.html" data-page-link="community">Community</a>
-      </nav>
-      <div class="header-actions"><a class="button button-quiet" href="index.html#agenda">View agenda</a><a class="button button-primary" href="#join" data-follow-link>Follow us</a></div>
-      <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-navigation" data-menu-button><span>Menu</span></button>
-    </div>
-    <nav class="mobile-nav" id="mobile-navigation" aria-label="Mobile navigation" data-mobile-nav data-open="false">
-      <a href="index.html">Home</a><a href="index.html#agenda">Agenda</a><a href="index.html#speakers">Speakers</a><a href="resources.html">Resources</a><a href="community.html" aria-current="page">Community</a>
-    </nav>
-  </header>
-
-  <noscript><div class="noscript-note">JavaScript is off. The community plan and confirmed contact status remain readable below.</div></noscript>
-
-  <main id="main-content">
-    <header class="page-hero">
-      <div class="shell">
-        <p class="eyebrow">LAUNCHING 24 OCTOBER 2026</p>
-        <h1>Quantum keeps going after Fall Fest.</h1>
-        <p class="lede">The UTM Quantum Community is a student-led home for learners who want to continue across physics, computing, and every discipline curious about quantum technology.</p>
-        <div class="page-meta"><span>STUDENT-LED</span><span>BEGINNER-OPEN</span><span>ANNUAL CONTINUITY</span></div>
+<body class="community-page min-h-screen overflow-x-hidden bg-background font-body-md text-body-md text-on-background" data-stage-theme="cream">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="site-layer min-h-screen flex flex-col">
+    <nav class="fixed top-0 z-50 w-full border-b border-outline-variant bg-surface/90 shadow-sm backdrop-blur-xl" aria-label="Primary navigation">
+      <div class="mx-auto flex max-w-container-max items-center justify-between px-margin-mobile py-4 md:px-margin-desktop">
+        <a class="font-display-xl text-[24px] font-bold leading-none tracking-tighter text-primary" href="index.html">Qiskit Fall Fest '26</a>
+        <div class="hidden items-center space-x-8 md:flex">
+          <a class="text-on-surface transition-colors hover:text-primary" href="schedule.html">Schedules</a>
+          <a class="text-on-surface transition-colors hover:text-primary" href="schedule.html#workshops">Workshops</a>
+          <a class="text-on-surface transition-colors hover:text-primary" href="#updates">Research</a>
+          <a class="text-on-surface transition-colors hover:text-primary" href="schedule.html#lab-visits">Hardware</a>
+          <a class="border-b-2 border-primary pb-1 font-bold text-primary" href="community.html" aria-current="page">UTM Hub</a>
+        </div>
+        <a class="glow-button hidden rounded-full bg-gradient-to-r from-primary to-bright-maroon px-6 py-2 font-label-sm text-label-sm uppercase tracking-widest text-on-primary md:inline-flex" href="#register">Register Now</a>
+        <button class="text-primary md:hidden" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-button><span class="material-symbols-outlined">menu</span></button>
       </div>
-    </header>
-    <div class="shell"><p class="load-status" data-load-status hidden></p></div>
-    <div class="shell" id="community-page-content">
-      <section class="community-statement section-grid">
-        <div class="section-number">01</div>
-        <div class="section-intro"><p class="eyebrow">WHY IT EXISTS</p><h2>A place to keep learning together.</h2></div>
-        <div class="section-body"><p class="lede">Fall Fest launches the UTM Quantum student community, builds a path to MyQI affiliation, and creates annual continuity for student-led quantum learning.</p></div>
-      </section>
-      <section class="community-plan section-grid" aria-labelledby="fallback-plan-title">
-        <div class="section-number">02</div>
-        <div class="section-intro"><p class="eyebrow">NEXT STEPS</p><h2 id="fallback-plan-title">Planned activities</h2></div>
-        <div class="section-body"><ol class="plan-list"><li><span>01</span>Beginner study circles using Qiskit learning resources</li><li><span>02</span>Student sharing sessions across physics and computing</li><li><span>03</span>A path toward MyQI affiliation</li><li><span>04</span>An annual handover for future student committees</li></ol></div>
-      </section>
-      <section class="join-panel" id="join" aria-labelledby="join-fallback-title">
-        <p class="eyebrow">JOIN THE COMMUNITY</p><h2 id="join-fallback-title">Stay close to what comes next.</h2>
-        <p>Public community links and the shared committee email are pending confirmation. They will appear here after the committee approves them.</p>
-        <div class="social-list"><span class="pending-link">Instagram · link pending</span><span class="pending-link">LinkedIn · link pending</span><span class="pending-link">WhatsApp · link pending</span></div>
-      </section>
-    </div>
-  </main>
+      <div class="menu-panel" id="mobile-menu" data-menu-panel data-open="false"><a href="index.html">Home</a><a href="schedule.html">Schedules</a><a href="schedule.html#workshops">Workshops</a><a href="#updates">Research</a><a href="schedule.html#lab-visits">Hardware</a><a href="community.html">UTM Hub</a></div>
+    </nav>
 
-  <footer class="site-footer">
-    <div class="shell footer-grid">
-      <div class="footer-brand"><a class="wordmark" href="index.html"><img class="wordmark-logo" src="assets/img/badge-pink.svg" width="42" height="42" alt=""><span class="wordmark-copy"><strong>Qiskit Fall Fest</strong><small>UTM · 2026</small></span></a><p>A student-led quantum computing event at Universiti Teknologi Malaysia.</p></div>
-      <div class="footer-links"><strong>Explore</strong><a href="index.html#agenda">Agenda</a><a href="resources.html">Resources</a><a href="community.html">Community</a></div>
-      <div class="footer-links"><strong>Contact</strong><span data-contact>Committee email pending confirmation</span><a href="https://github.com/Qiskit-Fall-Fest-2026/materials-resources">Materials repository</a></div>
-    </div>
-    <div class="shell footer-meta"><p>No analytics, cookies, advertising, or local storage of personal data.</p><p>This is a student-organised event site, not an official IBM or Qiskit publication. All trademarks belong to their owners.</p><p>Code: MIT. Event content and logos excluded. Last updated <time data-last-updated datetime="2026-08-31">2026-08-31</time>.</p></div>
-  </footer>
+    <main class="relative z-10 mx-auto w-full max-w-container-max flex-grow px-margin-mobile pb-24 pt-32 md:px-margin-desktop" id="main">
+      <section class="hero mb-24 grid grid-cols-1 items-center gap-6 text-center md:grid-cols-2 md:text-left" data-act="5" data-theme="cream">
+        <div>
+          <span class="mb-6 inline-block rounded-full bg-primary-container px-4 py-1 font-label-sm text-label-sm uppercase tracking-widest text-on-primary-container" data-reveal>Community Hub</span>
+          <h1 class="community-title mb-6 font-display-xl text-display-xl text-on-surface" data-reveal>Software<br>Ready,<br><span class="text-primary">Hardware still<br>Awaiting</span></h1>
+          <p class="mb-8 max-w-lg text-on-surface-variant" data-reveal>Join the premier quantum computing event at UTM. Establish a lasting student community, get hands-on with Qiskit, and bridge the gap between theoretical physics and cutting-edge software.</p>
+          <div class="flex flex-col gap-4 sm:flex-row" data-reveal>
+            <a class="glow-button inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary to-bright-maroon px-8 py-3 font-label-sm text-label-sm uppercase tracking-widest text-on-primary" href="#register"><span>Secure Spot</span><span class="material-symbols-outlined">arrow_forward</span></a>
+            <a class="glass-card rounded-full px-8 py-3 text-center font-label-sm text-label-sm uppercase tracking-widest text-on-surface transition-colors hover:bg-surface-container-low" href="#community">Join MyQI Chapter</a>
+          </div>
+        </div>
+        <figure class="hub-cover glass-card relative h-[300px] w-full overflow-hidden rounded-2xl md:h-[400px]" data-tilt data-reveal><img src="assets/img/community-hub-cover.jpg" alt="Community Hub quantum network"></figure>
+      </section>
+
+      <section class="mb-24" data-act="2" data-theme="blush">
+        <h2 class="mb-8 font-headline-lg text-[38px] leading-tight text-on-surface" data-reveal>Event Architecture</h2>
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+          <article class="glass-card relative overflow-hidden rounded-xl p-8 md:col-span-2" data-tilt data-reveal>
+            <div class="absolute right-0 top-0 p-4 opacity-5"><span class="material-symbols-outlined text-9xl text-primary">calendar_month</span></div>
+            <h3 class="mb-2 font-label-sm text-label-sm uppercase tracking-widest text-primary">Logistics</h3>
+            <div class="relative z-10 space-y-4">
+              <div class="flex items-center gap-4"><span class="material-symbols-outlined text-primary">event</span><span>24th October 2026</span></div>
+              <div class="flex items-center gap-4"><span class="material-symbols-outlined text-primary">location_on</span><span>ICC innovation &amp; Commercialisation Centre, UTM, JB</span></div>
+              <div class="flex items-center gap-4"><span class="material-symbols-outlined text-primary">group</span><span>Capacity: 100 in-person participants</span></div>
+              <div class="flex items-center gap-4"><span class="material-symbols-outlined text-primary">handshake</span><span>IBM Quantum x FC x FS</span></div>
+            </div>
+          </article>
+          <article class="glass-card relative overflow-hidden rounded-xl bg-surface-container-low p-8" data-tilt data-reveal><h3 class="mb-4 font-label-sm text-label-sm uppercase tracking-widest text-primary">Elite Status</h3><p class="text-on-surface-variant">UTM is one of only three Malaysian universities selected for IBM sponsorship for the 2026 cycle out of 900+ global applicants.</p></article>
+        </div>
+      </section>
+
+      <section class="mb-24 grid grid-cols-1 gap-6 lg:grid-cols-2" id="register" data-act="3" data-theme="rose">
+        <article class="glass-card rounded-2xl border-t-4 border-t-primary p-8" data-reveal>
+          <h2 class="mb-2 font-headline-lg text-[30px] font-semibold text-on-surface">Initialize Sequence</h2>
+          <p class="mb-8 text-on-surface-variant">Secure your slot for the main event (100 capacity).</p>
+          <form class="space-y-6" data-demo-registration>
+            <div><label class="mb-2 block font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant" for="full-name">Full Name</label><input class="input-glass" id="full-name" name="full-name" placeholder="Enter your name" type="text" required></div>
+            <div><label class="mb-2 block font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant" for="email">University Email</label><input class="input-glass" id="email" name="email" placeholder="student@utm.my" type="email" required></div>
+            <div><label class="mb-2 block font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant" for="faculty">Faculty</label><select class="input-glass" id="faculty" name="faculty" required><option value="">Select Faculty</option><option value="fc">Faculty of Computing</option><option value="fs">Faculty of Science</option><option value="other">Other</option></select></div>
+            <button class="glow-button mt-4 w-full rounded-lg bg-gradient-to-r from-primary to-bright-maroon px-8 py-4 font-label-sm text-label-sm uppercase tracking-widest text-on-primary" type="submit">Execute Registration</button>
+            <p class="registration-status" data-registration-status hidden aria-live="polite"></p>
+          </form>
+        </article>
+
+        <div class="flex flex-col gap-6" id="community">
+          <article class="glass-card relative flex flex-grow flex-col justify-center overflow-hidden rounded-2xl border-l-4 border-l-primary bg-surface-container-low p-8" data-tilt data-reveal>
+            <div class="pointer-events-none absolute bottom-0 right-0 h-56 w-56 opacity-10"><img class="h-full w-full object-cover" src="assets/img/community-network.jpg" alt=""></div>
+            <h2 class="relative z-10 mb-4 font-headline-lg text-[30px] font-semibold text-on-surface">Join MyQI UTM Chapter</h2>
+            <p class="relative z-10 mb-8 max-w-md text-on-surface-variant">Help us establish a lasting quantum student community. Connect with researchers, access hardware, and shape the future of quantum at UTM.</p>
+            <div class="relative z-10"><a class="inline-flex items-center gap-2 rounded-full border border-outline-variant bg-surface px-6 py-3 font-label-sm text-label-sm uppercase tracking-widest text-primary transition-colors hover:bg-surface-container" href="#updates"><span class="material-symbols-outlined">hub</span>Connect to Network</a></div>
+          </article>
+          <article class="glass-card rounded-2xl p-6" id="updates" data-act="5" data-theme="cream" data-reveal>
+            <div class="mb-6 flex items-center justify-between"><h3 class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Quantum Updates</h3><span class="material-symbols-outlined text-sm text-outline">notifications</span></div>
+            <div class="space-y-4">
+              <a class="block rounded-lg border border-outline-variant bg-surface p-4 transition-colors hover:bg-surface-container-low" href="#"><div class="mb-1 flex items-start justify-between"><span class="font-label-sm text-label-sm text-primary">Internship</span><span class="font-label-sm text-xs text-outline">New</span></div><h4 class="text-on-surface">IBM Quantum Research Intern 2027</h4></a>
+              <a class="block rounded-lg border border-outline-variant bg-surface p-4 transition-colors hover:bg-surface-container-low" href="#"><div class="mb-1"><span class="font-label-sm text-label-sm text-primary">Opportunity</span></div><h4 class="text-on-surface">Call for AQSolotl Lab Assistants</h4></a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="relative z-10 mt-auto w-full border-t border-outline-variant/30 bg-ink-black py-12 text-on-primary">
+      <div class="mx-auto grid max-w-container-max grid-cols-1 gap-6 px-margin-mobile md:grid-cols-2 md:px-margin-desktop lg:grid-cols-4">
+        <div><div class="mb-4 font-label-sm text-label-sm uppercase tracking-widest text-primary-fixed">Qiskit Fall Fest '26</div><p class="text-secondary-fixed-dim">© 2026 Qiskit Fall Fest @ UTM. Powered by IBM Quantum &amp; UTM Robotics.</p></div>
+        <div class="flex flex-col gap-2"><h3 class="mb-2 font-label-sm text-label-sm uppercase tracking-widest text-on-primary">Connect</h3><a class="text-surface-variant hover:text-white" href="#">LinkedIn</a><a class="text-surface-variant hover:text-white" href="#">Instagram</a></div>
+        <div class="flex flex-col gap-2"><h3 class="mb-2 font-label-sm text-label-sm uppercase tracking-widest text-on-primary">Legal</h3><a class="text-surface-variant hover:text-white" href="#">Code of Conduct</a><a class="text-surface-variant hover:text-white" href="#">Privacy Policy</a></div>
+        <div class="flex flex-col gap-2"><h3 class="mb-2 font-label-sm text-label-sm uppercase tracking-widest text-on-primary">Partners</h3><a class="text-surface-variant hover:text-white" href="https://www.ibm.com/quantum">IBM Research</a></div>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>
