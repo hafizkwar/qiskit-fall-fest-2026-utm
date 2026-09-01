@@ -43,12 +43,13 @@
     .home-page .primary-btn { width: 146px; min-height: 34px; background: rgba(255,255,255,.9); color: transparent; border: 1px solid rgba(226,191,185,.45); box-shadow: 0 5px 16px rgba(87,0,0,.13); transition: transform .3s ease, box-shadow .3s ease; }
     .home-page .primary-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(87,0,0,.18); }
     .home-page .poster-frame { background: #d7e2fb; }
-    .home-page .poster-frame img { width: 100%; height: 100%; object-fit: cover; }
+    .home-page .poster-frame img,
+    .home-page .poster-frame video { width: 100%; height: 100%; object-fit: cover; }
     .home-page .footer-link { color: #c6c6c7; transition: color .2s ease; }
     .home-page .footer-link:hover { color: white; }
     @media (max-width: 767px) { .home-page .home-hero-title { font-size: 3.25rem; line-height: .98; } }
   </style>
-  <link rel="stylesheet" href="assets/css/stage.css?v=20260901k">
+  <link rel="stylesheet" href="assets/css/stage.css?v=20260901l">
   <script type="module" src="assets/js/main.js?v=20260901i"></script>
   <noscript><style>[data-reveal]{opacity:1!important;transform:none!important}</style></noscript>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationEvent","name":"Qiskit Fall Fest 2026 @ UTM","startDate":"2026-10-24T08:00:00+08:00","endDate":"2026-10-24T18:00:00+08:00","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","eventStatus":"https://schema.org/EventScheduled","location":{"@type":"Place","name":"ICC, Innovation & Commercialisation Centre","address":{"@type":"PostalAddress","addressLocality":"Johor Bahru","addressRegion":"Johor","addressCountry":"MY"}},"url":"https://hafizkwar.github.io/qiskit-fall-fest-2026-utm/"}</script>
@@ -58,7 +59,10 @@
   <div class="site-layer min-h-screen flex flex-col">
     <nav class="fixed top-0 z-50 w-full border-b border-outline-variant/30 bg-white/85 shadow-[0_4px_20px_rgba(87,0,0,.04)] backdrop-blur-xl" aria-label="Primary navigation">
       <div class="mx-auto flex max-w-container-max items-center justify-between px-margin-mobile py-4 md:px-margin-desktop">
-        <a class="font-display-xl text-[24px] font-bold leading-none tracking-tighter text-primary" href="index.html">Qiskit Fall Fest '26</a>
+        <a class="site-brand font-display-xl text-[24px] font-bold leading-none tracking-tighter text-primary" href="index.html" aria-label="Qiskit Fall Fest 2026 home">
+          <img class="site-brand-logo" src="assets/img/badge-pink.svg" alt="">
+          <span>Qiskit Fall Fest '26</span>
+        </a>
         <div class="hidden items-center gap-8 md:flex">
           <a class="border-b-2 border-primary pb-1 font-label-sm text-label-sm font-bold text-primary" href="index.html" aria-current="page">Home</a>
           <a class="font-label-sm text-label-sm text-on-surface-variant transition-colors hover:text-primary" href="schedule.html">Schedules</a>
@@ -91,7 +95,9 @@
           </div>
         </div>
         <figure class="poster-frame glass-card relative h-[500px] w-full overflow-hidden rounded-2xl" data-tilt data-reveal>
-          <img src="assets/img/fall-fest-poster.jpg" alt="Qiskit Fall Fest 2026 bird illustration">
+          <video autoplay muted loop playsinline preload="metadata" poster="assets/img/fall-fest-poster.jpg" aria-label="Animated Qiskit Fall Fest 2026 bird artwork">
+            <source src="assets/media/qff-2026-cover.mp4" type="video/mp4">
+          </video>
         </figure>
       </section>
 

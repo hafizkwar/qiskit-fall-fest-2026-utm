@@ -52,6 +52,21 @@ body[data-stage-theme="rose"]::after { background: #94a0ff; opacity: 0.11; trans
 }
 
 .site-layer { position: relative; z-index: 1; }
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  min-width: 0;
+  text-decoration: none;
+}
+.site-brand-logo {
+  width: 2rem;
+  height: 2rem;
+  flex: 0 0 auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 9px rgba(87, 0, 0, .12));
+}
+.schedule-page .site-brand-logo { width: 2.5rem; height: 2.5rem; }
 .scene-surface {
   background: rgba(255, 248, 246, 0.86);
   backdrop-filter: blur(2px);
@@ -89,6 +104,8 @@ body[data-stage-theme="rose"]::after { background: #94a0ff; opacity: 0.11; trans
 
 @media (max-width: 767px) {
   #stage { --stage-opacity: 0.24; }
+  .schedule-page .schedule-brand { font-size: 1.35rem; }
+  .schedule-page .site-brand-logo { width: 2rem; height: 2rem; }
   body::before, body::after { width: 28rem; height: 28rem; filter: blur(85px); }
   .menu-panel {
     position: fixed;
