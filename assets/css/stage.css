@@ -222,6 +222,14 @@ body[data-stage-theme="ink"] #stage { filter: saturate(1.18) brightness(1.15) co
   height: 7.5rem;
   object-fit: contain;
 }
+.collaborator-card:first-child .collaborator-logo-stage { background: #fff !important; }
+.collaborator-card:first-child .collaborator-logo-stage img {
+  width: 8rem;
+  height: 8rem;
+  object-fit: cover;
+  object-position: center;
+  clip-path: circle(43% at 50% 50%);
+}
 .collaborator-card figcaption {
   padding: .9rem .35rem .3rem;
   color: #fff8f6;
