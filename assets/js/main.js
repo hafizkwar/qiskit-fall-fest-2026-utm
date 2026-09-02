@@ -1,5 +1,5 @@
 import { QuantumScene } from "./quantum-scene.js?v=20260901g";
-import { ScrollDirector, setupReveals, setupCardTilt } from "./scroll-director.js?v=20260901c";
+import { ScrollDirector, setupReveals, setupCardTilt } from "./scroll-director.js?v=20260902a";
 import { SceneInteraction } from "./interaction.js?v=20260901c";
 
 const EVENT_START = new Date("2026-10-24T08:00:00+08:00");
@@ -56,16 +56,30 @@ function setupCountdown() {
   setInterval(update, 1000);
 }
 
-function setupRegistrationPreview() {
-  const form = document.querySelector("[data-demo-registration]");
-  const status = document.querySelector("[data-registration-status]");
-  if (!form || !status) return;
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    if (!form.reportValidity()) return;
-    status.hidden = false;
-    status.textContent = "Registration preview complete. The official committee form will be linked here when it opens; nothing entered on this page was sent or stored.";
+function setupAudio() {
+  const audio = document.querySelector("[data-site-audio]");
+  const button = document.querySelector("[data-audio-toggle]");
+  if (!audio || !button) return;
+  const icon = button.querySelector("[data-audio-icon]");
+  const label = button.querySelector("[data-audio-label]");
+  audio.volume = .38;
+  const update = () => {
+    const playing = !audio.paused;
+    button.classList.toggle("is-playing", playing);
+    button.setAttribute("aria-pressed", String(playing));
+    button.setAttribute("aria-label", playing ? "Pause background music" : "Play background music");
+    if (icon) icon.textContent = playing ? "volume_up" : "music_note";
+    if (label) label.textContent = playing ? "Pause music" : "Play music";
+  };
+  button.addEventListener("click", async () => {
+    if (audio.paused) {
+      try { await audio.play(); } catch { return; }
+    } else audio.pause();
+    update();
   });
+  audio.addEventListener("play", update);
+  audio.addEventListener("pause", update);
+  update();
 }
 
 function markSchedulePulses(scene) {
@@ -84,7 +98,7 @@ function startExperience() {
   if (reduced) document.querySelectorAll("video").forEach((video) => { video.removeAttribute("autoplay"); video.pause(); });
   setupMenu();
   setupCountdown();
-  setupRegistrationPreview();
+  setupAudio();
   setupReveals(reduced);
   setupCardTilt(reduced);
   if (!webglAvailable()) {

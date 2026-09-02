@@ -76,17 +76,23 @@ export function setupReveals(reducedMotion = false) {
 
 export function setupCardTilt(reducedMotion = false) {
   if (reducedMotion || matchMedia("(pointer: coarse)").matches) return;
-  document.querySelectorAll("[data-tilt]").forEach((card) => {
+  const cards = new Set(document.querySelectorAll("[data-tilt], .glass-card"));
+  cards.forEach((card) => {
+    card.setAttribute("data-tilt", "");
     card.addEventListener("pointermove", (event) => {
       const rect = card.getBoundingClientRect();
       const x = (event.clientX - rect.left) / rect.width - .5;
       const y = (event.clientY - rect.top) / rect.height - .5;
+      card.style.setProperty("--pointer-x", `${((x + .5) * 100).toFixed(1)}%`);
+      card.style.setProperty("--pointer-y", `${((y + .5) * 100).toFixed(1)}%`);
       card.style.setProperty("--card-rx", `${(-y * 6).toFixed(2)}deg`);
       card.style.setProperty("--card-ry", `${(x * 6).toFixed(2)}deg`);
+      card.dataset.pointerActive = "true";
     }, { passive: true });
     card.addEventListener("pointerleave", () => {
       card.style.setProperty("--card-rx", "0deg");
       card.style.setProperty("--card-ry", "0deg");
+      card.dataset.pointerActive = "false";
     }, { passive: true });
   });
 }

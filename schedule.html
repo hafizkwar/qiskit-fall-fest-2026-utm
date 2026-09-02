@@ -13,7 +13,7 @@
   <link rel="icon" href="assets/img/badge-pink.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&amp;family=Hanken+Grotesk:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <script>
@@ -26,7 +26,7 @@
         "on-surface-variant": "#5a413d", "outline": "#8e706c", "outline-variant": "#e2bfb9"
       },
       spacing: { "margin-desktop": "47px", "margin-mobile": "20px", "gutter": "24px", "container-max": "1280px" },
-      fontFamily: { "label-sm": ["JetBrains Mono"], "body-md": ["Hanken Grotesk"], "display-xl": ["Sora"], "headline-lg": ["Sora"] },
+      fontFamily: { "label-sm": ["Hanken Grotesk"], "body-md": ["Hanken Grotesk"], "display-xl": ["Sora"], "headline-lg": ["Sora"] },
       fontSize: {
         "label-sm": ["11px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "500" }],
         "body-md": ["15px", { lineHeight: "22px", fontWeight: "400" }],
@@ -53,8 +53,8 @@
       .schedule-page .schedule-copy p { max-width: none; }
     }
   </style>
-  <link rel="stylesheet" href="assets/css/stage.css?v=20260901m">
-  <script type="module" src="assets/js/main.js?v=20260901j"></script>
+  <link rel="stylesheet" href="assets/css/stage.css?v=20260902a">
+  <script type="module" src="assets/js/main.js?v=20260902a"></script>
   <noscript><style>[data-reveal]{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body class="schedule-page min-h-screen overflow-x-hidden bg-background font-body-md text-body-md" data-stage-theme="cream">
@@ -67,23 +67,22 @@
           <span>Qiskit Fall Fest '26</span>
         </a>
         <div class="hidden items-center gap-6 font-label-sm text-[9px] uppercase md:flex">
+          <a class="text-on-surface-variant transition-colors hover:text-primary" href="index.html">Home</a>
           <a class="border-b-2 border-bright-maroon pb-1 font-bold text-bright-maroon" href="schedule.html" aria-current="page">Schedules</a>
-          <a class="text-on-surface-variant transition-colors hover:text-primary" href="#workshops">Workshops</a>
           <a class="text-on-surface-variant transition-colors hover:text-primary" href="community.html#updates">Research</a>
-          <a class="text-on-surface-variant transition-colors hover:text-primary" href="#lab-visits">Hardware</a>
           <a class="text-on-surface-variant transition-colors hover:text-primary" href="community.html">UTM Hub</a>
         </div>
-        <a class="hidden rounded-full bg-gradient-to-r from-deep-maroon to-bright-maroon px-6 py-3 font-label-sm text-[9px] uppercase text-on-primary shadow-[0_5px_14px_rgba(163,0,0,.2)] md:block" href="community.html#register">Register Now</a>
+        <a class="hidden rounded-full bg-gradient-to-r from-deep-maroon to-bright-maroon px-6 py-3 font-label-sm text-[9px] uppercase text-on-primary shadow-[0_5px_14px_rgba(163,0,0,.2)] md:block" href="https://forms.gle/JVebZTEvy7T6VuUt9" target="_blank" rel="noopener noreferrer">Register Now</a>
         <button class="text-primary md:hidden" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-button><span class="material-symbols-outlined">menu</span></button>
       </div>
-      <div class="menu-panel" id="mobile-menu" data-menu-panel data-open="false"><a href="index.html">Home</a><a href="schedule.html">Schedules</a><a href="#workshops">Workshops</a><a href="community.html#updates">Research</a><a href="#lab-visits">Hardware</a><a href="community.html">UTM Hub</a></div>
+      <div class="menu-panel" id="mobile-menu" data-menu-panel data-open="false"><a href="index.html">Home</a><a href="schedule.html">Schedules</a><a href="community.html#updates">Research</a><a href="community.html">UTM Hub</a></div>
     </nav>
 
     <main class="relative z-10 flex-grow px-margin-mobile pb-24 pt-28 md:px-margin-desktop" id="main">
       <header class="hero mx-auto mb-12 max-w-4xl text-center" data-act="3" data-theme="cream">
         <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/5 px-4 py-1" data-reveal><span class="material-symbols-outlined text-[15px] text-deep-maroon">calendar_month</span><span class="font-label-sm text-label-sm uppercase text-primary">24th October 2026</span></div>
         <h1 class="gradient-text mb-4 font-display-xl text-[42px] font-bold leading-tight md:text-display-xl" data-reveal>Detailed Event Schedule</h1>
-        <p class="mx-auto max-w-2xl text-on-surface-variant" data-reveal>Explore the full tentative program for Qiskit Fall Fest 2026 @ UTM. From introductory registration to hands-on quantum lab visits, prepare for a day bridging software and awaiting hardware.</p>
+        <p class="mx-auto max-w-2xl text-on-surface-variant" data-reveal>One day of talks, hands-on Qiskit, community, and lab discovery.</p>
       </header>
 
       <section class="relative mx-auto max-w-5xl" aria-label="Tentative event programme">
@@ -103,8 +102,19 @@
 
           <article class="schedule-row relative flex w-full flex-col items-center justify-between md:flex-row" data-act="3" data-theme="ink">
             <span class="timeline-node top-8 md:top-1/2 md:-translate-y-1/2"></span>
-            <div class="schedule-copy w-full pt-6 text-left md:w-5/12 md:pr-12 md:pt-0 md:text-right" data-reveal><div class="mb-2 font-label-sm text-label-sm text-bright-maroon">10:45 AM</div><h2 class="mb-2 font-headline-lg text-2xl">Expert Keynotes</h2><p class="ml-auto text-on-surface-variant">Deep dive into the intersection of quantum hardware and software ecosystems with leading researchers.</p></div>
-            <div class="schedule-visual mt-4 w-full md:mt-0 md:w-5/12 md:pl-12" data-reveal><div class="glass-card rounded-xl border-l-4 border-l-deep-maroon p-6" data-tilt><div class="space-y-4"><div><h3 class="font-bold text-primary">Quantum State Translation</h3><p class="text-sm text-on-surface-variant">Dr. Yap Yung Szen</p></div><div><h3 class="font-bold text-primary">Algorithmic Readiness</h3><p class="text-sm text-on-surface-variant">Ts. Dr. Nur Haliza Abdul Wahab</p></div></div></div></div>
+            <div class="schedule-copy w-full pt-6 text-left md:w-5/12 md:pr-12 md:pt-0 md:text-right" data-reveal><div class="mb-2 font-label-sm text-label-sm text-bright-maroon">10:45 AM</div><h2 class="mb-2 font-headline-lg text-2xl">Expert Keynotes</h2><p class="ml-auto text-on-surface-variant">Two perspectives on turning quantum ideas into working systems.</p></div>
+            <div class="schedule-visual mt-4 w-full md:mt-0 md:w-5/12 md:pl-12" data-reveal>
+              <div class="speaker-stack">
+                <article class="speaker-card glass-card" data-tilt>
+                  <img class="speaker-photo" src="assets/img/dr-yap-yung-szen.jpg" alt="Dr. Yap Yung Szen">
+                  <div><span class="speaker-label">Keynote</span><h3>Dr. Yap Yung Szen</h3><p>Quantum State Translation</p></div>
+                </article>
+                <article class="speaker-card glass-card" data-tilt>
+                  <img class="speaker-photo" src="assets/img/dr-nur-haliza.jpg" alt="Ts. Dr. Nur Haliza Abdul Wahab">
+                  <div><span class="speaker-label">Keynote</span><h3>Ts. Dr. Nur Haliza Abdul Wahab</h3><p>Algorithmic Readiness</p></div>
+                </article>
+              </div>
+            </div>
           </article>
 
           <article class="schedule-row relative flex w-full flex-col items-center justify-between md:flex-row-reverse" id="workshops" data-act="3" data-theme="maroon">
@@ -133,10 +143,12 @@
     <footer class="relative z-10 w-full border-t border-outline-variant/50 bg-surface-container-low py-12 text-on-surface-variant">
       <div class="mx-auto grid max-w-container-max grid-cols-1 gap-6 px-margin-mobile md:grid-cols-2 md:px-margin-desktop lg:grid-cols-4">
         <div class="col-span-1 lg:col-span-2"><div class="mb-4 font-label-sm text-label-sm uppercase tracking-widest text-deep-maroon">Qiskit Fall Fest '26</div><p class="max-w-sm text-sm">© 2026 Qiskit Fall Fest @ UTM. Powered by IBM Quantum &amp; UTM Robotics.</p></div>
-        <div class="flex flex-col space-y-3"><a class="font-label-sm text-label-sm hover:text-primary" href="#">LinkedIn</a><a class="font-label-sm text-label-sm hover:text-primary" href="#">Instagram</a></div>
+        <div class="flex flex-col space-y-3"><a class="font-label-sm text-label-sm hover:text-primary" href="https://www.linkedin.com/in/quantum-utm-aab499433" target="_blank" rel="noopener noreferrer">LinkedIn</a><a class="font-label-sm text-label-sm hover:text-primary" href="https://www.instagram.com/quantumutmmy/" target="_blank" rel="noopener noreferrer">Instagram</a></div>
         <div class="flex flex-col space-y-3"><a class="font-label-sm text-label-sm hover:text-primary" href="#">Code of Conduct</a><a class="font-label-sm text-label-sm hover:text-primary" href="#">Privacy Policy</a><a class="font-label-sm text-label-sm hover:text-primary" href="https://www.ibm.com/quantum">IBM Research</a></div>
       </div>
     </footer>
   </div>
+  <audio data-site-audio loop preload="metadata"><source src="assets/media/i-could-use-a-boost.mp3" type="audio/mpeg"></audio>
+  <button class="music-toggle" type="button" data-audio-toggle aria-pressed="false" aria-label="Play background music"><span class="music-disc" aria-hidden="true"><span class="material-symbols-outlined" data-audio-icon>music_note</span></span><span data-audio-label>Play music</span></button>
 </body>
 </html>
