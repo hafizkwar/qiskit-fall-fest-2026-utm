@@ -58,28 +58,51 @@ function setupCountdown() {
 
 function setupAudio() {
   const audio = document.querySelector("[data-site-audio]");
-  const button = document.querySelector("[data-audio-toggle]");
-  if (!audio || !button) return;
-  const icon = button.querySelector("[data-audio-icon]");
-  const label = button.querySelector("[data-audio-label]");
+  if (!audio) return;
+  const stateKey = "qff-background-audio";
   audio.volume = .38;
-  const update = () => {
-    const playing = !audio.paused;
-    button.classList.toggle("is-playing", playing);
-    button.setAttribute("aria-pressed", String(playing));
-    button.setAttribute("aria-label", playing ? "Pause background music" : "Play background music");
-    if (icon) icon.textContent = playing ? "volume_up" : "music_note";
-    if (label) label.textContent = playing ? "Pause music" : "Play music";
+  audio.autoplay = true;
+
+  const restore = () => {
+    try {
+      const state = JSON.parse(sessionStorage.getItem(stateKey) || "null");
+      if (!state || !Number.isFinite(state.time) || !Number.isFinite(state.savedAt) || !audio.duration) return;
+      const elapsed = Math.max(0, (Date.now() - state.savedAt) / 1000);
+      audio.currentTime = (state.time + elapsed) % audio.duration;
+    } catch { /* Playback can continue without saved position. */ }
   };
-  button.addEventListener("click", async () => {
-    if (audio.paused) {
-      try { await audio.play(); } catch { return; }
-    } else audio.pause();
-    update();
+
+  const persist = () => {
+    try { sessionStorage.setItem(stateKey, JSON.stringify({ time: audio.currentTime, savedAt: Date.now() })); }
+    catch { /* Storage may be unavailable in a private browser context. */ }
+  };
+
+  const releaseFallback = () => {
+    document.removeEventListener("pointerdown", startFromInteraction, true);
+    document.removeEventListener("keydown", startFromInteraction, true);
+  };
+  const start = async () => {
+    try {
+      await audio.play();
+      releaseFallback();
+    } catch { /* Browser policy will retry on the visitor's first interaction. */ }
+  };
+  const startFromInteraction = () => { void start(); };
+
+  if (audio.readyState >= 1) restore();
+  else audio.addEventListener("loadedmetadata", restore, { once: true });
+  document.addEventListener("pointerdown", startFromInteraction, { capture: true, passive: true });
+  document.addEventListener("keydown", startFromInteraction, true);
+  addEventListener("pagehide", persist);
+  addEventListener("pageshow", () => { void start(); });
+  let lastPersisted = 0;
+  audio.addEventListener("timeupdate", () => {
+    const now = Date.now();
+    if (now - lastPersisted < 2000) return;
+    lastPersisted = now;
+    persist();
   });
-  audio.addEventListener("play", update);
-  audio.addEventListener("pause", update);
-  update();
+  void start();
 }
 
 function markSchedulePulses(scene) {
