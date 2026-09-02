@@ -191,11 +191,17 @@ body[data-stage-theme="ink"] #stage { filter: saturate(1.18) brightness(1.15) co
 
 .collaborator-showcase {
   padding: clamp(2rem, 5vw, 4rem);
-  border: 1px solid rgba(255, 218, 212, .16);
+  border: 1px solid rgba(163, 0, 0, .12);
   border-radius: 1.5rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, .82), rgba(255, 226, 222, .78));
+  box-shadow: 0 26px 70px rgba(87, 0, 0, .09);
+  overflow: hidden;
+}
+body[data-stage-theme="maroon"] .collaborator-showcase,
+body[data-stage-theme="ink"] .collaborator-showcase {
+  border-color: rgba(255, 218, 212, .16);
   background: linear-gradient(135deg, rgba(42, 31, 33, .76), rgba(87, 0, 0, .5));
   box-shadow: 0 26px 70px rgba(28, 8, 13, .18);
-  overflow: hidden;
 }
 .collaborator-grid {
   display: grid;
@@ -232,9 +238,11 @@ body[data-stage-theme="ink"] #stage { filter: saturate(1.18) brightness(1.15) co
 }
 .collaborator-card figcaption {
   padding: .9rem .35rem .3rem;
-  color: #fff8f6;
+  color: #570000;
   font-weight: 600;
 }
+body[data-stage-theme="maroon"] .collaborator-card figcaption,
+body[data-stage-theme="ink"] .collaborator-card figcaption { color: #fff8f6; }
 
 .speaker-stack { display: grid; gap: .8rem; }
 .speaker-card {

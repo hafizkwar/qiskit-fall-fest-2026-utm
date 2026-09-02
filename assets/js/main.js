@@ -1,5 +1,5 @@
 import { QuantumScene } from "./quantum-scene.js?v=20260901g";
-import { ScrollDirector, setupReveals, setupCardTilt } from "./scroll-director.js?v=20260902a";
+import { ScrollDirector, setupReveals, setupCardTilt } from "./scroll-director.js?v=20260903a";
 import { SceneInteraction } from "./interaction.js?v=20260901c";
 
 const EVENT_START = new Date("2026-10-24T08:00:00+08:00");
@@ -146,7 +146,7 @@ function startExperience() {
   }
   const director = reduced ? null : new ScrollDirector((act, progress, globalProgress) => scene.setAct(act, progress, globalProgress));
   if (reduced) {
-    document.body.dataset.stageTheme = "cream";
+    document.body.dataset.stageTheme = "ink";
     scene.setAct(1, 0, 0);
   }
   new SceneInteraction(document.documentElement, (x, y) => scene.setRotation(x, y), reduced);

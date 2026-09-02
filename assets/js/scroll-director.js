@@ -1,4 +1,10 @@
 const THEMES = { 1: "cream", 2: "maroon", 3: "ink", 4: "ink", 5: "cream" };
+const INVERTED_THEMES = { cream: "ink", blush: "maroon", rose: "ink", maroon: "cream", ink: "cream" };
+
+function themeFor(section, act) {
+  const original = section?.dataset.theme || THEMES[act] || "cream";
+  return INVERTED_THEMES[original] || original;
+}
 
 export class ScrollDirector {
   constructor(onFrame) {
@@ -33,10 +39,10 @@ export class ScrollDirector {
       const previousAct = this.active;
       this.activeNode = nearest;
       this.active = Number(nearest.dataset.act || 1);
-      document.body.dataset.stageTheme = nearest.dataset.theme || THEMES[this.active] || "cream";
+      document.body.dataset.stageTheme = themeFor(nearest, this.active);
       if (this.active === 3 && previousAct !== 3) document.dispatchEvent(new CustomEvent("circuit-pulse"));
     } else {
-      document.body.dataset.stageTheme = nearest.dataset.theme || THEMES[this.active] || "cream";
+      document.body.dataset.stageTheme = themeFor(nearest, this.active);
     }
     const rect = this.activeNode.getBoundingClientRect();
     const travel = Math.max(1, rect.height + innerHeight);
