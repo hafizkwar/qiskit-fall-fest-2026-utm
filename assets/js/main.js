@@ -1,5 +1,5 @@
 import { QuantumScene } from "./quantum-scene.js?v=20260901g";
-import { ScrollDirector, setupReveals, setupCardTilt } from "./scroll-director.js?v=20260902a";
+import { ScrollDirector, setupReveals, setupCardTilt } from "./scroll-director.js?v=20260903b";
 import { SceneInteraction } from "./interaction.js?v=20260901c";
 
 const EVENT_START = new Date("2026-10-24T08:00:00+08:00");
@@ -116,6 +116,8 @@ function markSchedulePulses(scene) {
 }
 
 function startExperience() {
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  if (!location.hash) scrollTo(0, 0);
   const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const mobile = matchMedia("(max-width: 760px), (pointer: coarse)").matches;
   if (reduced) document.querySelectorAll("video").forEach((video) => { video.removeAttribute("autoplay"); video.pause(); });
