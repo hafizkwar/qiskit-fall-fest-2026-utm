@@ -56,55 +56,6 @@ function setupCountdown() {
   setInterval(update, 1000);
 }
 
-function setupAudio() {
-  const audio = document.querySelector("[data-site-audio]");
-  if (!audio) return;
-  const stateKey = "qff-background-audio";
-  audio.volume = .38;
-  audio.autoplay = true;
-
-  const restore = () => {
-    try {
-      const state = JSON.parse(sessionStorage.getItem(stateKey) || "null");
-      if (!state || !Number.isFinite(state.time) || !Number.isFinite(state.savedAt) || !audio.duration) return;
-      const elapsed = Math.max(0, (Date.now() - state.savedAt) / 1000);
-      audio.currentTime = (state.time + elapsed) % audio.duration;
-    } catch { /* Playback can continue without saved position. */ }
-  };
-
-  const persist = () => {
-    try { sessionStorage.setItem(stateKey, JSON.stringify({ time: audio.currentTime, savedAt: Date.now() })); }
-    catch { /* Storage may be unavailable in a private browser context. */ }
-  };
-
-  const releaseFallback = () => {
-    document.removeEventListener("pointerdown", startFromInteraction, true);
-    document.removeEventListener("keydown", startFromInteraction, true);
-  };
-  const start = async () => {
-    try {
-      await audio.play();
-      releaseFallback();
-    } catch { /* Browser policy will retry on the visitor's first interaction. */ }
-  };
-  const startFromInteraction = () => { void start(); };
-
-  if (audio.readyState >= 1) restore();
-  else audio.addEventListener("loadedmetadata", restore, { once: true });
-  document.addEventListener("pointerdown", startFromInteraction, { capture: true, passive: true });
-  document.addEventListener("keydown", startFromInteraction, true);
-  addEventListener("pagehide", persist);
-  addEventListener("pageshow", () => { void start(); });
-  let lastPersisted = 0;
-  audio.addEventListener("timeupdate", () => {
-    const now = Date.now();
-    if (now - lastPersisted < 2000) return;
-    lastPersisted = now;
-    persist();
-  });
-  void start();
-}
-
 function markSchedulePulses(scene) {
   const cards = document.querySelectorAll(".timeline-card");
   if (!cards.length) return;
@@ -123,7 +74,6 @@ function startExperience() {
   if (reduced) document.querySelectorAll("video").forEach((video) => { video.removeAttribute("autoplay"); video.pause(); });
   setupMenu();
   setupCountdown();
-  setupAudio();
   setupReveals(reduced);
   setupCardTilt(reduced);
   if (!webglAvailable()) {

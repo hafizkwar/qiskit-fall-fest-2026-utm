@@ -222,15 +222,9 @@ body[data-stage-theme="ink"] #stage { filter: saturate(1.18) brightness(1.15) co
   height: 7.5rem;
   object-fit: contain;
 }
-.collaborator-card:first-child .collaborator-logo-stage { background: #fff !important; }
-.collaborator-card:first-child .collaborator-logo-stage img {
-  width: 8rem;
-  height: 8rem;
-  object-fit: cover;
-  object-position: center;
-  clip-path: circle(43% at 50% 50%);
-}
-.collaborator-card:nth-child(2) .collaborator-logo-stage img {
+.collaborator-utm .collaborator-logo-stage { background: #fff !important; }
+.collaborator-utm .collaborator-logo-stage img { height: 6.8rem; }
+.collaborator-ibm .collaborator-logo-stage img {
   transform: scale(1.38);
   transform-origin: center;
 }
