@@ -68,7 +68,7 @@
   "agenda": [
     { "start": "08:00", "end": "08:30", "session": "Breakfast", "type": "hospitality" },
     { "start": "08:30", "end": "09:00", "session": "Registration and attendance", "type": "arrival" },
-    { "start": "09:00", "end": "09:21", "session": "Opening: welcome from the Deans of the Faculty of Computing and the Faculty of Science, followed by the opening ceremony", "type": "ceremony" },
+    { "start": "09:00", "end": "09:21", "session": "Opening: welcome from the Dean of the Faculty of Science, followed by the opening ceremony", "type": "ceremony" },
     { "start": "09:21", "end": "09:30", "session": "Break", "type": "break" },
     { "start": "09:30", "end": "10:45", "session": "Group forming and self-introductions", "type": "community" },
     { "start": "10:45", "end": "11:00", "session": "Talks by Dr. Yap Yung Szen and Ts. Dr. Nur Haliza Abdul Wahab", "type": "talk" },
