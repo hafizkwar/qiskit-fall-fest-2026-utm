@@ -49,7 +49,7 @@
     .home-page .footer-link:hover { color: white; }
     @media (max-width: 767px) { .home-page .home-hero-title { font-size: 3.25rem; line-height: .98; } }
   </style>
-  <link rel="stylesheet" href="assets/css/stage.css?v=20260908b">
+  <link rel="stylesheet" href="assets/css/stage.css?v=20260918a">
   <script type="module" src="assets/js/main.js?v=20260908b"></script>
   <noscript><style>[data-reveal]{opacity:1!important;transform:none!important}</style></noscript>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationEvent","name":"Qiskit Fall Fest 2026 @ UTM","startDate":"2026-10-24T08:00:00+08:00","endDate":"2026-10-24T18:00:00+08:00","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","eventStatus":"https://schema.org/EventScheduled","location":{"@type":"Place","name":"ICC, Innovation & Commercialisation Centre","address":{"@type":"PostalAddress","addressLocality":"Johor Bahru","addressRegion":"Johor","addressCountry":"MY"}},"url":"https://hafizkwar.github.io/qiskit-fall-fest-2026-utm/"}</script>
@@ -105,20 +105,15 @@
           <h2 class="font-headline-lg text-[38px] leading-tight text-on-surface" id="collaborators-title">Our Collaborators</h2>
           <p class="text-on-surface-variant">Three teams. One quantum day.</p>
         </div>
-        <div class="collaborator-grid">
-          <figure class="collaborator-card collaborator-aqsolotl glass-card" data-tilt data-reveal>
-            <div class="collaborator-logo-stage"><img src="assets/img/aqsolotl-logo.png" alt="AQSolotl logo"></div>
-            <figcaption>AQSolotl</figcaption>
-          </figure>
-          <figure class="collaborator-card collaborator-utm glass-card" data-tilt data-reveal>
-            <div class="collaborator-logo-stage"><img src="assets/img/utm-official.png" alt="Universiti Teknologi Malaysia official logo"></div>
-            <figcaption>Universiti Teknologi Malaysia</figcaption>
-          </figure>
-          <figure class="collaborator-card collaborator-ibm glass-card" data-tilt data-reveal>
-            <div class="collaborator-logo-stage"><img src="assets/img/ibm-quantum-logo.jpg" alt="IBM Quantum logo"></div>
-            <figcaption>IBM Quantum</figcaption>
-          </figure>
-        </div>
+        <figure class="collaborator-composite glass-card" data-tilt data-reveal>
+          <div class="collaborator-composite-frame">
+            <div class="collaborator-composite-logo collaborator-aqsolotl"><img src="assets/img/aqsolotl-logo.png" alt="AQSolotl logo"></div>
+            <span class="collaborator-composite-link" aria-hidden="true">×</span>
+            <div class="collaborator-composite-logo collaborator-utm"><img src="assets/img/utm-official.png" alt="Universiti Teknologi Malaysia official logo"></div>
+            <span class="collaborator-composite-link" aria-hidden="true">×</span>
+            <div class="collaborator-composite-logo collaborator-ibm"><img src="assets/img/ibm-quantum-logo.jpg" alt="IBM Quantum logo"></div>
+          </div>
+        </figure>
       </section>
 
       <section class="mb-32 grid grid-cols-1 gap-6 md:grid-cols-3" data-act="5" data-theme="cream">
