@@ -472,17 +472,35 @@ body[data-stage-theme="ink"] .impact-figures span { color: #fff8f6; }
     backdrop-filter: blur(18px);
   }
   .menu-panel a { padding: .8rem; color: #261816; text-decoration: none; }
-  .collaborator-composite-frame {
-    min-height: 0;
-    grid-template-columns: 1fr;
-    gap: .65rem;
-    padding: 1.25rem;
+  .collaborator-showcase { padding: clamp(1rem, 4vw, 1.5rem); }
+  .collaborator-composite {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    padding: clamp(.45rem, 2vw, .7rem);
   }
-  .collaborator-composite-logo img { height: 6rem; }
-  .collaborator-composite-logo.collaborator-aqsolotl img { width: 7rem; }
-  .collaborator-composite-logo.collaborator-utm img { height: 5.5rem; }
-  .collaborator-composite-logo.collaborator-ibm img { height: 5.8rem; }
-  .collaborator-composite-link { font-size: 1.25rem; }
+  .collaborator-composite-frame {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    min-height: clamp(7rem, 31vw, 9rem);
+    grid-template-columns: minmax(0, .8fr) auto minmax(0, 1.5fr) auto minmax(0, 1fr);
+    gap: clamp(.15rem, 1vw, .4rem);
+    padding: clamp(.65rem, 3vw, 1rem);
+  }
+  .collaborator-composite-logo { overflow: hidden; }
+  .collaborator-composite-logo img {
+    width: 100%;
+    height: auto;
+    max-height: clamp(2.6rem, 12vw, 4.3rem);
+  }
+  .collaborator-composite-logo.collaborator-aqsolotl img { width: min(100%, 4.25rem); }
+  .collaborator-composite-logo.collaborator-utm img { height: auto; }
+  .collaborator-composite-logo.collaborator-ibm img {
+    height: auto;
+    transform: none;
+  }
+  .collaborator-composite-link { font-size: clamp(.8rem, 3.5vw, 1.15rem); }
 }
 
 @media (prefers-reduced-motion: reduce) {
