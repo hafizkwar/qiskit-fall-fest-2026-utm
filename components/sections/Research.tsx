@@ -112,7 +112,7 @@ export default function Research() {
             <img 
               src="https://static.wixstatic.com/media/4952f7_cd2eddd2ed974b29b9cddc5247aef4eb~mv2.png" 
               alt="AQSolotl" 
-              className="h-14 md:h-20 w-auto object-contain opacity-60 hover:opacity-100 hover:scale-105 transition-all duration-300" 
+              className="h-10 md:h-14 w-auto object-contain opacity-60 hover:opacity-100 hover:scale-105 transition-all duration-300" 
             />
             {/* Partner 1 */}
             <img 
