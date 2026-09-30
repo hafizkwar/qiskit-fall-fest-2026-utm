@@ -1,14 +1,14 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { researchProjects } from "@/data/research";
-
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, X, ChevronRight } from "lucide-react";
 
 export default function Research() {
   const containerRef = useRef<HTMLElement>(null);
+  const [selectedProject, setSelectedProject] = useState<any>(null);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -31,6 +31,15 @@ export default function Research() {
 
     return () => ctx.revert();
   }, []);
+
+  // Prevent body scroll when modal is open
+  useEffect(() => {
+    if (selectedProject) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [selectedProject]);
 
   return (
     <section id="research" ref={containerRef} className="py-32 bg-black-deep relative">
@@ -58,10 +67,10 @@ export default function Research() {
 
         <div className="grid grid-cols-1 gap-8">
           {researchProjects.map((project) => (
-            <a 
+            <button 
               key={project.id} 
-              href={project.link}
-              className="research-card group block relative p-6 md:p-8 border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] transition-all duration-500 overflow-hidden"
+              onClick={() => setSelectedProject(project)}
+              className="research-card group block relative p-6 md:p-8 border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] transition-all duration-500 overflow-hidden text-left w-full cursor-pointer"
             >
               <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative z-10">
                 
@@ -98,7 +107,7 @@ export default function Research() {
               
               {/* Illumination */}
               <div className="absolute left-0 bottom-0 w-full h-[1px] bg-gradient-to-r from-transparent via-utm-gold/50 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left"></div>
-            </a>
+            </button>
           ))}
         </div>
 
@@ -134,6 +143,74 @@ export default function Research() {
         </div>
 
       </div>
+
+      {/* Modal Popup */}
+      <div 
+        className={`fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 transition-all duration-500 ${
+          selectedProject ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}
+      >
+        <div 
+          className="absolute inset-0 bg-black/80 backdrop-blur-md" 
+          onClick={() => setSelectedProject(null)}
+        />
+        <div 
+          className={`relative bg-black-deep border border-white/10 max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl transition-all duration-500 ${
+            selectedProject ? "translate-y-0 scale-100" : "translate-y-12 scale-95"
+          }`}
+        >
+          <button 
+            onClick={() => setSelectedProject(null)}
+            className="absolute top-4 right-4 z-10 p-2 bg-black/50 hover:bg-utm-gold text-white hover:text-black transition-colors rounded-full"
+          >
+            <X size={20} />
+          </button>
+
+          {selectedProject && (
+            <div className="flex flex-col md:flex-row">
+              {/* Modal Image Sidebar */}
+              <div className="md:w-1/3 relative h-64 md:h-auto">
+                <img 
+                  src={selectedProject.image} 
+                  alt={selectedProject.title}
+                  className="w-full h-full object-cover object-top"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black-deep via-transparent to-transparent md:bg-gradient-to-r"></div>
+              </div>
+              
+              {/* Modal Content */}
+              <div className="md:w-2/3 p-8 md:p-12">
+                <div className="text-utm-gold text-xs font-mono mb-2 uppercase">{selectedProject.category}</div>
+                <h3 className="text-3xl font-bold text-white mb-6">
+                  {selectedProject.title}
+                </h3>
+                <div className="text-sm text-white/50 uppercase tracking-widest font-mono mb-8 pb-4 border-b border-white/10">
+                  Principal Investigator: <span className="text-white/80">{selectedProject.researcher}</span>
+                </div>
+                
+                <p className="text-off-white/80 leading-relaxed mb-8">
+                  {selectedProject.fullDetails}
+                </p>
+
+                {selectedProject.highlights && (
+                  <div>
+                    <h4 className="text-white font-bold mb-4">Key Research Highlights</h4>
+                    <ul className="space-y-3">
+                      {selectedProject.highlights.map((highlight: string, idx: number) => (
+                        <li key={idx} className="flex items-start gap-3 text-off-white/70 text-sm">
+                          <ChevronRight className="text-utm-gold shrink-0 mt-0.5" size={16} />
+                          <span>{highlight}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+
     </section>
   );
 }
