@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@theme {
+  --color-utm-maroon: #500000;
+  --color-utm-maroon-dark: #3a0000;
+  --color-utm-gold: #c5a963;
+  --color-utm-gold-light: #d8c287;
+  --color-black-deep: #050505;
+  --color-off-white: #f5f5f5;
+  --color-muted-gray: #888888;
+  --animate-spin-slow: spin 8s linear infinite;
+}
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: var(--color-black-deep);
+  --foreground: var(--color-off-white);
+  --maroon: var(--color-utm-maroon);
+  --gold: var(--color-utm-gold);
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  background-color: #050505;
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Glassmorphism */
+.glass-nav {
+  background: rgba(5, 5, 5, 0.7);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(197, 169, 99, 0.3); /* Gold */
+}
+
+/* Typography clamp */
+.hero-title {
+  font-size: clamp(3rem, 8vw, 8rem);
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* Hide scrollbar for a cleaner look */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #333; 
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #500000; 
+}
