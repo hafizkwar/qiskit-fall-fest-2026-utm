@@ -124,34 +124,34 @@ export default function Research() {
           <div className="text-center mb-12">
             <span className="text-xs text-white/40 tracking-[0.2em] uppercase font-bold">In Collaboration With</span>
           </div>
-          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24">
+          <div className="flex flex-wrap justify-center items-center gap-16 md:gap-32">
             {/* AQSolotl */}
-            <div className="flex justify-center items-center h-20 md:h-28 w-40 md:w-56">
+            <div className="flex justify-center items-center h-28 md:h-40 w-48 md:w-72">
               <img 
                 src="https://static.wixstatic.com/media/4952f7_cd2eddd2ed974b29b9cddc5247aef4eb~mv2.png" 
                 alt="AQSolotl" 
-                className="max-h-16 md:max-h-20 max-w-full object-contain opacity-60 hover:opacity-100 hover:scale-105 transition-all duration-300" 
+                className="max-h-24 md:max-h-32 max-w-full object-contain opacity-60 hover:opacity-100 hover:scale-105 transition-all duration-300" 
               />
             </div>
             {/* Partner 1 */}
-            <div className="flex justify-center items-center h-20 md:h-28 w-40 md:w-56">
+            <div className="flex justify-center items-center h-28 md:h-40 w-48 md:w-72">
               <img 
                 src="/assets/nus_transparent.png" 
                 alt="NUS Logo" 
-                className="max-h-20 md:max-h-28 max-w-full object-contain opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:scale-105 transition-all duration-300" 
+                className="max-h-28 md:max-h-40 max-w-full object-contain opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:scale-105 transition-all duration-300" 
               />
             </div>
             {/* Partner 2 */}
-            <div className="flex justify-center items-center h-20 md:h-28 w-40 md:w-56">
+            <div className="flex justify-center items-center h-28 md:h-40 w-48 md:w-72">
               <img 
                 src="/assets/osaka_transparent.png" 
                 alt="Osaka University Logo" 
-                className="max-h-20 md:max-h-28 max-w-full object-contain opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:scale-105 transition-all duration-300" 
+                className="max-h-28 md:max-h-40 max-w-full object-contain opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:scale-105 transition-all duration-300" 
               />
             </div>
             {/* MyQI */}
-            <div className="flex justify-center items-center h-20 md:h-28 w-40 md:w-56">
-              <div className="text-3xl md:text-4xl font-bold font-mono tracking-widest text-white/60 hover:text-utm-gold hover:opacity-100 hover:scale-105 transition-all duration-300">
+            <div className="flex justify-center items-center h-28 md:h-40 w-48 md:w-72">
+              <div className="text-4xl md:text-5xl font-bold font-mono tracking-widest text-white/60 hover:text-utm-gold hover:opacity-100 hover:scale-105 transition-all duration-300">
                 MyQI
               </div>
             </div>
@@ -185,17 +185,17 @@ export default function Research() {
           {selectedProject && (
             <div className="flex flex-col md:flex-row">
               {/* Modal Image Sidebar */}
-              <div className="md:w-1/3 relative h-64 md:h-auto">
+              <div className="md:w-2/5 relative h-64 md:h-auto bg-black-deep">
                 <img 
                   src={selectedProject.image} 
                   alt={selectedProject.title}
                   className="w-full h-full object-cover object-top"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black-deep via-transparent to-transparent md:bg-gradient-to-r"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black-deep via-transparent to-transparent md:bg-gradient-to-l md:from-black-deep md:via-transparent md:to-transparent"></div>
               </div>
               
               {/* Modal Content */}
-              <div className="md:w-2/3 p-8 md:p-12">
+              <div className="md:w-3/5 p-8 md:p-12">
                 <div className="text-utm-gold text-xs font-mono mb-2 uppercase">{selectedProject.category}</div>
                 <h3 className="text-3xl font-bold text-white mb-6">
                   {selectedProject.title}
