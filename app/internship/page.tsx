@@ -11,6 +11,7 @@ export default function InternshipPage() {
     university: "",
     field: "",
     date: "",
+    message: "",
   });
   
   const [file, setFile] = useState<File | null>(null);
@@ -49,6 +50,9 @@ Email: ${formData.email}
 University/Institution: ${formData.university}
 Field of Study: ${formData.field}
 Expected Start Date: ${formData.date}
+
+Message to the Team:
+${formData.message || "N/A"}
 
 [IMPORTANT: My CV is attached to this email as '${file ? file.name : "my_cv.pdf"}']
 
@@ -164,6 +168,19 @@ ${formData.name}`);
                   onChange={handleInputChange}
                   className="w-full bg-transparent border-b border-white/20 px-0 py-3 text-white focus:outline-none focus:border-utm-gold transition-colors"
                   style={{ colorScheme: 'dark' }}
+                />
+              </div>
+
+              {/* Message */}
+              <div className="space-y-2 md:col-span-2">
+                <label className="text-xs uppercase tracking-widest text-white/50 font-mono">Message / Cover Letter</label>
+                <textarea 
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  rows={4}
+                  className="w-full bg-transparent border-b border-white/20 px-0 py-3 text-white focus:outline-none focus:border-utm-gold transition-colors resize-none"
+                  placeholder="Tell us a bit about yourself and why you want to join..."
                 />
               </div>
             </div>
