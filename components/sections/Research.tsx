@@ -102,6 +102,37 @@ export default function Research() {
           ))}
         </div>
 
+        {/* Collaborations Logos */}
+        <div className="mt-24 pt-12 border-t border-white/10">
+          <div className="text-center mb-12">
+            <span className="text-xs text-white/40 tracking-[0.2em] uppercase font-bold">In Collaboration With</span>
+          </div>
+          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24">
+            {/* AQSolotl */}
+            <img 
+              src="https://static.wixstatic.com/media/4952f7_cd2eddd2ed974b29b9cddc5247aef4eb~mv2.png" 
+              alt="AQSolotl" 
+              className="h-10 md:h-12 object-contain opacity-60 hover:opacity-100 hover:scale-105 transition-all duration-300" 
+            />
+            {/* NUS */}
+            <img 
+              src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Nus_logo.png" 
+              alt="National University of Singapore" 
+              className="h-12 md:h-16 object-contain opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:scale-105 transition-all duration-300 bg-white/5 rounded-md px-2 py-1" 
+            />
+            {/* Osaka University */}
+            <img 
+              src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f6/Osaka_University_logo.svg/1200px-Osaka_University_logo.svg.png" 
+              alt="Osaka University" 
+              className="h-12 md:h-16 object-contain opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:scale-105 transition-all duration-300 bg-white/5 rounded-md p-2" 
+            />
+            {/* MyQI */}
+            <div className="text-xl md:text-2xl font-bold font-mono tracking-widest text-white/60 hover:text-utm-gold hover:opacity-100 hover:scale-105 transition-all duration-300">
+              MyQI
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );
