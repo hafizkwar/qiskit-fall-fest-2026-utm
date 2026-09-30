@@ -116,16 +116,14 @@ export default function Research() {
             />
             {/* NUS */}
             <img 
-              src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Nus_logo.png" 
+              src="/assets/nus.svg" 
               alt="National University of Singapore" 
-              className="h-12 md:h-16 object-contain opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:scale-105 transition-all duration-300 bg-white/5 rounded-md px-2 py-1" 
+              className="h-12 md:h-16 object-contain opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:scale-105 transition-all duration-300 bg-white/5 rounded-md px-4 py-2" 
             />
             {/* Osaka University */}
-            <img 
-              src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f6/Osaka_University_logo.svg/1200px-Osaka_University_logo.svg.png" 
-              alt="Osaka University" 
-              className="h-12 md:h-16 object-contain opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:scale-105 transition-all duration-300 bg-white/5 rounded-md p-2" 
-            />
+            <div className="text-lg md:text-xl font-bold font-serif text-white/60 hover:text-utm-gold hover:opacity-100 hover:scale-105 transition-all duration-300 bg-white/5 rounded-md px-4 py-2">
+              Osaka University
+            </div>
             {/* MyQI */}
             <div className="text-xl md:text-2xl font-bold font-mono tracking-widest text-white/60 hover:text-utm-gold hover:opacity-100 hover:scale-105 transition-all duration-300">
               MyQI
