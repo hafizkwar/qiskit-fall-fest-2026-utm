@@ -19,7 +19,7 @@ export default function Research() {
       gsap.from(".research-card", {
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 70%",
+          start: "top 80%", // slightly lower to ensure it fires reliably
         },
         x: -50,
         opacity: 0,
@@ -29,7 +29,25 @@ export default function Research() {
       });
     }, containerRef);
 
-    return () => ctx.revert();
+    // Refresh ScrollTrigger when images complete loading
+    // This prevents the bug where elements get stuck at opacity: 0 because their heights calculated as 0
+    const handleImageLoad = () => {
+      ScrollTrigger.refresh();
+    };
+    
+    const images = document.querySelectorAll("img");
+    images.forEach(img => {
+      if (img.complete) {
+        handleImageLoad();
+      } else {
+        img.addEventListener('load', handleImageLoad);
+      }
+    });
+
+    return () => {
+      ctx.revert();
+      images.forEach(img => img.removeEventListener('load', handleImageLoad));
+    };
   }, []);
 
   // Prevent body scroll when modal is open

@@ -58,9 +58,8 @@ export default function Hero() {
         end: "bottom top",
         scrub: 1,
         animation: gsap.timeline()
-          .to(textRef.current, { y: -150, opacity: 0 }, 0)
-          .to(videoRef.current, { scale: 1.1 }, 0)
-          .to(canvasRef.current, { scale: 1.5, opacity: 0.5 }, 0)
+          .to(textRef.current, { y: -100, opacity: 0 }, 0)
+          .to(canvasRef.current, { opacity: 0 }, 0)
       });
     });
 
