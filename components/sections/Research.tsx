@@ -112,22 +112,22 @@ export default function Research() {
             <img 
               src="https://static.wixstatic.com/media/4952f7_cd2eddd2ed974b29b9cddc5247aef4eb~mv2.png" 
               alt="AQSolotl" 
-              className="h-14 md:h-20 object-contain opacity-60 hover:opacity-100 hover:scale-105 transition-all duration-300" 
+              className="h-14 md:h-20 w-auto object-contain opacity-60 hover:opacity-100 hover:scale-105 transition-all duration-300" 
             />
             {/* Partner 1 */}
             <img 
               src="/assets/nus_transparent.png" 
               alt="NUS Logo" 
-              className="h-20 md:h-28 object-contain opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:scale-105 transition-all duration-300" 
+              className="h-14 md:h-20 w-auto object-contain opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:scale-105 transition-all duration-300" 
             />
             {/* Partner 2 */}
             <img 
               src="/assets/osaka_transparent.png" 
               alt="Osaka University Logo" 
-              className="h-20 md:h-28 object-contain opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:scale-105 transition-all duration-300" 
+              className="h-14 md:h-20 w-auto object-contain opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:scale-105 transition-all duration-300" 
             />
             {/* MyQI */}
-            <div className="text-xl md:text-2xl font-bold font-mono tracking-widest text-white/60 hover:text-utm-gold hover:opacity-100 hover:scale-105 transition-all duration-300">
+            <div className="text-2xl md:text-3xl font-bold font-mono tracking-widest text-white/60 hover:text-utm-gold hover:opacity-100 hover:scale-105 transition-all duration-300">
               MyQI
             </div>
           </div>
