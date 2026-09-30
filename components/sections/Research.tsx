@@ -124,28 +124,36 @@ export default function Research() {
           <div className="text-center mb-12">
             <span className="text-xs text-white/40 tracking-[0.2em] uppercase font-bold">In Collaboration With</span>
           </div>
-          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24">
+          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20">
             {/* AQSolotl */}
-            <img 
-              src="https://static.wixstatic.com/media/4952f7_cd2eddd2ed974b29b9cddc5247aef4eb~mv2.png" 
-              alt="AQSolotl" 
-              className="h-10 md:h-14 w-auto object-contain opacity-60 hover:opacity-100 hover:scale-105 transition-all duration-300" 
-            />
+            <div className="flex justify-center items-center h-16 md:h-20 w-32 md:w-40">
+              <img 
+                src="https://static.wixstatic.com/media/4952f7_cd2eddd2ed974b29b9cddc5247aef4eb~mv2.png" 
+                alt="AQSolotl" 
+                className="max-h-12 md:max-h-16 max-w-full object-contain opacity-60 hover:opacity-100 hover:scale-105 transition-all duration-300" 
+              />
+            </div>
             {/* Partner 1 */}
-            <img 
-              src="/assets/nus_transparent.png" 
-              alt="NUS Logo" 
-              className="h-14 md:h-20 w-auto object-contain opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:scale-105 transition-all duration-300" 
-            />
+            <div className="flex justify-center items-center h-16 md:h-20 w-32 md:w-40">
+              <img 
+                src="/assets/nus_transparent.png" 
+                alt="NUS Logo" 
+                className="max-h-16 md:max-h-20 max-w-full object-contain opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:scale-105 transition-all duration-300" 
+              />
+            </div>
             {/* Partner 2 */}
-            <img 
-              src="/assets/osaka_transparent.png" 
-              alt="Osaka University Logo" 
-              className="h-14 md:h-20 w-auto object-contain opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:scale-105 transition-all duration-300" 
-            />
+            <div className="flex justify-center items-center h-16 md:h-20 w-32 md:w-40">
+              <img 
+                src="/assets/osaka_transparent.png" 
+                alt="Osaka University Logo" 
+                className="max-h-16 md:max-h-20 max-w-full object-contain opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:scale-105 transition-all duration-300" 
+              />
+            </div>
             {/* MyQI */}
-            <div className="text-2xl md:text-3xl font-bold font-mono tracking-widest text-white/60 hover:text-utm-gold hover:opacity-100 hover:scale-105 transition-all duration-300">
-              MyQI
+            <div className="flex justify-center items-center h-16 md:h-20 w-32 md:w-40">
+              <div className="text-2xl md:text-3xl font-bold font-mono tracking-widest text-white/60 hover:text-utm-gold hover:opacity-100 hover:scale-105 transition-all duration-300">
+                MyQI
+              </div>
             </div>
           </div>
         </div>
