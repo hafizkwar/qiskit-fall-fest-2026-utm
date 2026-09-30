@@ -68,10 +68,10 @@ export default function Navbar() {
           {/* CTA & Mobile Toggle */}
           <div className="flex items-center gap-4">
             <Link
-              href="#join"
+              href="/internship"
               className="hidden md:inline-flex items-center justify-center px-5 py-2 text-xs font-semibold tracking-wider text-white border border-white/20 hover:border-utm-gold hover:bg-white/5 transition-all duration-300 rounded-full group"
             >
-              JOIN COMMUNITY
+              APPLY FOR INTERNSHIP
               <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
             </Link>
 
@@ -107,14 +107,14 @@ export default function Navbar() {
             </Link>
           ))}
           <Link
-            href="#join"
+            href="/internship"
             className={`mt-4 px-8 py-3 border border-utm-gold text-utm-gold rounded-full hover:bg-utm-gold hover:text-black-deep transition-colors duration-300 ${
               mobileMenuOpen ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
             }`}
             style={{ transitionDelay: `${navLinks.length * 100}ms` }}
             onClick={() => setMobileMenuOpen(false)}
           >
-            JOIN COMMUNITY
+            APPLY FOR INTERNSHIP
           </Link>
         </nav>
       </div>

@@ -52,8 +52,8 @@ export default function JoinCommunity() {
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-6">
-            <a href="#" className="px-10 py-5 bg-utm-gold text-black-deep font-bold tracking-widest text-sm hover:bg-white hover:scale-105 transition-all duration-300">
-              JOIN THE COMMUNITY
+            <a href="/internship" className="px-10 py-5 bg-utm-gold text-black-deep font-bold tracking-widest text-sm hover:bg-white hover:scale-105 transition-all duration-300">
+              APPLY FOR INTERNSHIP
             </a>
             <a href="#contact" className="px-10 py-5 border border-white/30 text-white font-bold tracking-widest text-sm hover:border-utm-gold hover:bg-white/5 transition-all duration-300">
               CONTACT US
