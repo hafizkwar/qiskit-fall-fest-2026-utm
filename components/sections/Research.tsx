@@ -36,12 +36,24 @@ export default function Research() {
     <section id="research" ref={containerRef} className="py-32 bg-black-deep relative">
       <div className="container mx-auto px-4 md:px-8">
         
-        <div className="mb-20">
-          <span className="text-utm-gold text-xs font-bold tracking-[0.2em] uppercase mb-4 block">04 / Research</span>
-          <h2 className="section-title font-light">
-            RESEARCH & <br />
-            <span className="font-bold">INNOVATION</span>
-          </h2>
+        <div className="mb-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-end">
+          <div>
+            <span className="text-utm-gold text-xs font-bold tracking-[0.2em] uppercase mb-4 block">04 / Research</span>
+            <h2 className="section-title font-light mb-0">
+              RESEARCH & <br />
+              <span className="font-bold">INNOVATION</span>
+            </h2>
+          </div>
+          <div>
+            <p className="text-off-white/70 font-light leading-relaxed max-w-xl">
+              Universiti Teknologi Malaysia is at the forefront of Malaysia's quantum technology ecosystem. 
+              Our research is driven by the <strong>Quantum Computing Special Interest Group (SIG)</strong>, 
+              focusing on quantum algorithms, architectures, and real-world applications. We actively collaborate 
+              with international institutions (CQT Singapore, NUS, Osaka University) and pioneer industrial 
+              partnerships, including hosting Malaysia's first quantum hardware company operation, <strong>AQSolotl</strong>, 
+              at the UTM Technovation Park.
+            </p>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 gap-8">
