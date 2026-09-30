@@ -114,16 +114,18 @@ export default function Research() {
               alt="AQSolotl" 
               className="h-10 md:h-12 object-contain opacity-60 hover:opacity-100 hover:scale-105 transition-all duration-300" 
             />
-            {/* NUS */}
+            {/* Partner 1 */}
             <img 
-              src="/assets/nus.svg" 
-              alt="National University of Singapore" 
+              src="/assets/uploaded_collab2.png" 
+              alt="NUS Logo" 
               className="h-12 md:h-16 object-contain opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:scale-105 transition-all duration-300 bg-white/5 rounded-md px-4 py-2" 
             />
-            {/* Osaka University */}
-            <div className="text-lg md:text-xl font-bold font-serif text-white/60 hover:text-utm-gold hover:opacity-100 hover:scale-105 transition-all duration-300 bg-white/5 rounded-md px-4 py-2">
-              Osaka University
-            </div>
+            {/* Partner 2 */}
+            <img 
+              src="/assets/uploaded_collab1.jpg" 
+              alt="Osaka University Logo" 
+              className="h-12 md:h-16 object-contain opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:scale-105 transition-all duration-300 bg-white/5 rounded-md px-4 py-2" 
+            />
             {/* MyQI */}
             <div className="text-xl md:text-2xl font-bold font-mono tracking-widest text-white/60 hover:text-utm-gold hover:opacity-100 hover:scale-105 transition-all duration-300">
               MyQI
