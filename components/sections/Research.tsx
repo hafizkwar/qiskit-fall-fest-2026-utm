@@ -67,9 +67,17 @@ export default function Research() {
 
         <div className="grid grid-cols-1 gap-8">
           {researchProjects.map((project) => (
-            <button 
+            <div 
               key={project.id} 
               onClick={() => setSelectedProject(project)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  setSelectedProject(project);
+                }
+              }}
               className="research-card group block relative p-6 md:p-8 border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] transition-all duration-500 overflow-hidden text-left w-full cursor-pointer"
             >
               <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative z-10">
@@ -107,7 +115,7 @@ export default function Research() {
               
               {/* Illumination */}
               <div className="absolute left-0 bottom-0 w-full h-[1px] bg-gradient-to-r from-transparent via-utm-gold/50 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left"></div>
-            </button>
+            </div>
           ))}
         </div>
 
