@@ -5,7 +5,7 @@ export const researchProjects = [
     title: "AQSolotl Partnership at Technovation Park",
     description: "Developing high-precision control electronics for quantum computers in collaboration with AQSolotl Pte. Ltd., Malaysia's first quantum hardware company operation based at UTM.",
     researcher: "Assoc. Prof. Dr. Haza Nuzly",
-    image: "https://static.wixstatic.com/media/cdd678_4a039c68017d4811bfb2664e8d1b277bf002.jpg",
+    image: "/assets/dr_haza.jpg",
     link: "#",
     fullDetails: "Universiti Teknologi Malaysia (UTM) has formed a strategic partnership with AQSolotl Pte. Ltd., making history by hosting Malaysia's first operational quantum hardware company at the UTM Technovation Park. This collaboration focuses on the indigenous development of highly sophisticated control electronics required to operate superconducting quantum computers.",
     highlights: [
