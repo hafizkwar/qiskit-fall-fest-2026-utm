@@ -5,7 +5,7 @@ export const researchProjects = [
     title: "AQSolotl Partnership at Technovation Park",
     description: "Developing high-precision control electronics for quantum computers in collaboration with AQSolotl Pte. Ltd., Malaysia's first quantum hardware company operation based at UTM.",
     researcher: "Assoc. Prof. Dr. Haza Nuzly",
-    image: "/assets/quantum_research_lab.jpg",
+    image: "https://static.wixstatic.com/media/cdd678_4a039c68017d4811bfb2664e8d1b277bf002.jpg",
     link: "#"
   },
   {
@@ -14,7 +14,7 @@ export const researchProjects = [
     title: "MyQI & International Collaborations",
     description: "Spearheading the Malaysia Quantum Information (MyQI) community and fostering international research ties with CQT Singapore, NTU, and Osaka University.",
     researcher: "Dr. Yap Yung Szen",
-    image: "/assets/quantum_applications.jpg",
+    image: "https://quantum2025.org/wp-content/uploads/2025/11/Yap-Yung-Szen_Kiri-scaled.jpg",
     link: "#"
   },
   {
@@ -23,7 +23,7 @@ export const researchProjects = [
     title: "Advanced Quantum Computing SIG",
     description: "Exploring complex computational algorithms and real-world quantum applications across finance and healthcare through the UTM Quantum Computing Special Interest Group.",
     researcher: "Dr. Koh Meng Hock",
-    image: "/assets/quantum_algorithms.jpg",
+    image: "https://www.utm.my/directory/images/profilephotos/10525.jpg",
     link: "#"
   }
 ];
