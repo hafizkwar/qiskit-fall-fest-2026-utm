@@ -37,7 +37,7 @@ export const researchProjects = [
     title: "Advanced Quantum Computing SIG",
     description: "Exploring complex computational algorithms and real-world quantum applications across finance and healthcare through the UTM Quantum Computing Special Interest Group.",
     researcher: "Dr. Koh Meng Hock",
-    image: "https://www.utm.my/directory/images/profilephotos/10525.jpg",
+    image: "/assets/dr_koh.jpg",
     link: "#",
     fullDetails: "The UTM Quantum Computing Special Interest Group (SIG) focuses heavily on the software and algorithmic layer of the quantum stack. Dr. Koh Meng Hock leads research into adapting classical machine learning models and optimization problems into quantum-native formats. The SIG aims to demonstrate 'quantum utility'—finding near-term applications for Noisy Intermediate-Scale Quantum (NISQ) devices that provide tangible benefits over classical supercomputers.",
     highlights: [
