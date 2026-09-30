@@ -47,23 +47,36 @@ export default function FocusAreas() {
           {focusAreas.map((area) => (
             <div 
               key={area.id} 
-              className="focus-card group relative p-8 border border-white/10 bg-white/[0.01] hover:bg-white/[0.03] transition-all duration-500 overflow-hidden"
+              className="focus-card group relative h-[400px] border border-white/10 overflow-hidden flex flex-col justify-end p-8"
             >
-              <div className="flex justify-between items-start mb-16">
-                <span className="font-mono text-sm text-white/40">{area.id}</span>
-                <ArrowUpRight className="text-white/30 group-hover:text-utm-gold transition-colors duration-300" size={20} />
-              </div>
+              {/* Background Image */}
+              {area.image && (
+                <div 
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                  style={{ backgroundImage: `url(${area.image})` }}
+                />
+              )}
               
-              <h3 className="text-xl font-bold tracking-wide text-white mb-4 group-hover:text-utm-gold transition-colors duration-300">
-                {area.title}
-              </h3>
-              
-              <p className="text-sm font-light text-off-white/60 leading-relaxed group-hover:text-off-white/80 transition-colors duration-300">
-                {area.description}
-              </p>
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black-deep via-black-deep/80 to-transparent opacity-90 group-hover:opacity-80 transition-opacity duration-500"></div>
 
-              {/* Hover effect particles */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-utm-maroon/20 blur-[50px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none transform translate-x-1/2 -translate-y-1/2"></div>
+              {/* Content */}
+              <div className="relative z-10 flex flex-col h-full justify-between">
+                <div className="flex justify-between items-start">
+                  <span className="font-mono text-sm text-utm-gold bg-black-deep/50 px-3 py-1 rounded-sm border border-utm-gold/30 backdrop-blur-sm">{area.id}</span>
+                  <ArrowUpRight className="text-white/50 group-hover:text-utm-gold transition-colors duration-300" size={24} />
+                </div>
+                
+                <div>
+                  <h3 className="text-xl font-bold tracking-wide text-white mb-3 group-hover:text-utm-gold transition-colors duration-300">
+                    {area.title}
+                  </h3>
+                  
+                  <p className="text-sm font-light text-off-white/80 leading-relaxed group-hover:text-white transition-colors duration-300">
+                    {area.description}
+                  </p>
+                </div>
+              </div>
             </div>
           ))}
         </div>

@@ -1,38 +1,29 @@
 export const researchProjects = [
   {
     id: 1,
-    category: "Quantum Computing",
-    title: "Fault-Tolerant Quantum Architectures",
-    description: "Investigating error correction codes and fault-tolerant mechanisms for scalable quantum computers.",
-    researcher: "Dr. Jane Doe (Placeholder)",
-    image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=600&auto=format&fit=crop",
+    category: "Quantum Hardware & Architecture",
+    title: "AQSolotl Partnership at Technovation Park",
+    description: "Developing high-precision control electronics for quantum computers in collaboration with AQSolotl Pte. Ltd., Malaysia's first quantum hardware company operation based at UTM.",
+    researcher: "Assoc. Prof. Dr. Haza Nuzly",
+    image: "/assets/quantum_research_lab.jpg",
     link: "#"
   },
   {
     id: 2,
-    category: "Quantum Communication",
-    title: "QKD Network Implementation",
-    description: "Building robust Quantum Key Distribution networks across university campuses.",
-    researcher: "Prof. John Smith (Placeholder)",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=600&auto=format&fit=crop",
+    category: "Quantum Information",
+    title: "MyQI & International Collaborations",
+    description: "Spearheading the Malaysia Quantum Information (MyQI) community and fostering international research ties with CQT Singapore, NTU, and Osaka University.",
+    researcher: "Dr. Yap Yung Szen",
+    image: "/assets/quantum_applications.jpg",
     link: "#"
   },
   {
     id: 3,
-    category: "Quantum Materials",
-    title: "Superconducting Qubits",
-    description: "Characterizing new superconducting materials to improve coherence times.",
-    researcher: "Dr. Alice Wong (Placeholder)",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=600&auto=format&fit=crop",
-    link: "#"
-  },
-  {
-    id: 4,
     category: "Quantum Algorithms",
-    title: "Optimization with QAOA",
-    description: "Applying the Quantum Approximate Optimization Algorithm to logistics and routing problems.",
-    researcher: "Dr. Robert Chen (Placeholder)",
-    image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?q=80&w=600&auto=format&fit=crop",
+    title: "Advanced Quantum Computing SIG",
+    description: "Exploring complex computational algorithms and real-world quantum applications across finance and healthcare through the UTM Quantum Computing Special Interest Group.",
+    researcher: "Dr. Koh Meng Hock",
+    image: "/assets/quantum_algorithms.jpg",
     link: "#"
   }
 ];

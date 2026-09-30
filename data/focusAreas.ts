@@ -1,32 +1,20 @@
 export const focusAreas = [
   {
     id: "01",
-    title: "QUANTUM COMPUTING",
-    description: "Exploring new paradigms in computation using quantum bits and gates.",
+    title: "QUANTUM ALGORITHMS",
+    description: "Developing robust quantum algorithms to solve complex computational problems faster than classical limits, led by the UTM Quantum Computing SIG.",
+    image: "/assets/quantum_algorithms.jpg"
   },
   {
     id: "02",
-    title: "QUANTUM COMMUNICATION",
-    description: "Developing secure communication networks using quantum entanglement.",
+    title: "QUANTUM HARDWARE & ARCHITECTURE",
+    description: "Designing high-precision quantum computer control electronics and hardware through industrial partnerships like AQSolotl Pte. Ltd. at UTM Technovation Park.",
+    image: "/assets/quantum_hardware.jpg"
   },
   {
     id: "03",
-    title: "QUANTUM SENSING",
-    description: "Advancing high-precision measurement technologies.",
-  },
-  {
-    id: "04",
-    title: "QUANTUM MATERIALS",
-    description: "Investigating novel materials for future quantum technologies.",
-  },
-  {
-    id: "05",
-    title: "QUANTUM ALGORITHMS",
-    description: "Designing algorithms to solve complex problems exponentially faster.",
-  },
-  {
-    id: "06",
-    title: "QUANTUM EDUCATION",
-    description: "Fostering the next generation of quantum scientists and engineers.",
+    title: "REAL-WORLD QUANTUM APPLICATIONS",
+    description: "Investigating the transformative impact of quantum technologies across crucial industries, including finance, healthcare, and cryptography.",
+    image: "/assets/quantum_applications.jpg"
   }
 ];
