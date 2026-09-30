@@ -66,12 +66,12 @@ export default function Research() {
               <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative z-10">
                 
                 {/* Image */}
-                <div className="md:col-span-3 aspect-video relative overflow-hidden rounded-sm">
+                <div className="md:col-span-3 aspect-square relative overflow-hidden rounded-sm bg-black/20">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img 
                     src={project.image} 
                     alt={project.title} 
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" 
+                    className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" 
                   />
                 </div>
 
