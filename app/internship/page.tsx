@@ -18,7 +18,7 @@ export default function InternshipPage() {
   const [isHovering, setIsHovering] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
