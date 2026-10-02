@@ -21,7 +21,7 @@ export const researchProjects = [
     title: "MyQI & International Collaborations",
     description: "Spearheading the Malaysia Quantum Information (MyQI) community and fostering international research ties with CQT Singapore, NTU, and Osaka University.",
     researcher: "Dr. Yap Yung Szen",
-    image: "/assets/dr_yap.png",
+    image: "/assets/dr_yap.jpg",
     link: "#",
     fullDetails: "The Malaysia Quantum Information (MyQI) initiative serves as the central hub for quantum researchers across the nation. Led by Dr. Yap Yung Szen, the group actively fosters high-impact research collaborations globally. By connecting local academics with world-renowned hubs like the Centre for Quantum Technologies (CQT) in Singapore, Nanyang Technological University (NTU), and Osaka University, MyQI ensures Malaysia remains plugged into the global quantum conversation.",
     highlights: [
