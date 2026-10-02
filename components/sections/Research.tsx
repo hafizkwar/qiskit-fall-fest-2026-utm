@@ -16,13 +16,9 @@ export default function Research() {
     }
 
     const ctx = gsap.context(() => {
-      // Set initial state without hiding completely during SSR
-      gsap.set(".research-card", { opacity: 1, x: 0 });
-      
       gsap.fromTo(".research-card", 
         { 
-          x: -50, 
-          opacity: 0 
+          x: -50 
         },
         {
           scrollTrigger: {
@@ -30,7 +26,6 @@ export default function Research() {
             start: "top 85%", // slightly lower to ensure it fires reliably
           },
           x: 0,
-          opacity: 1,
           duration: 0.8,
           stagger: 0.2,
           ease: "power2.out",
